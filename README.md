@@ -159,4 +159,59 @@ Klik tombol → buka platform di tab baru. Selesai.
 
 ---
 
+## 🌐 Custom Domain & SEO
+
+**Live**: [https://makanapa.lol](https://makanapa.lol)
+
+### DNS Setup (sekali aja)
+
+Di provider domain (`makanapa.lol`), tambahkan DNS records berikut yang nge-point ke GitHub Pages:
+
+| Type  | Name | Value                | TTL  |
+|-------|------|----------------------|------|
+| A     | @    | 185.199.108.153      | 3600 |
+| A     | @    | 185.199.109.153      | 3600 |
+| A     | @    | 185.199.110.153      | 3600 |
+| A     | @    | 185.199.111.153      | 3600 |
+| CNAME | www  | asharipanji.github.io | 3600 |
+
+CNAME file di repo (`/CNAME`) sudah berisi `makanapa.lol` — GitHub Pages auto-detect.
+
+Setelah DNS propagate (±5–60 menit), GitHub akan auto-issue SSL cert. Centang **Enforce HTTPS** di Settings → Pages.
+
+### SEO ping otomatis
+
+Setiap push ke `main`, GitHub Action `seo-ping.yml` otomatis:
+1. Tunggu 90 detik untuk Pages re-deploy
+2. Submit URL via **IndexNow** ke Bing, Yandex, Naver, Seznam (relayed)
+
+Manual ping kapan aja:
+```bash
+bash scripts/ping-seo.sh
+```
+
+### LLM/GEO discoverability
+
+- `/llms.txt` — concise overview untuk LLM scanners (300 kata)
+- `/llms-full.txt` — comprehensive content (2000+ kata) buat training/grounding
+- `robots.txt` allow eksplisit: GPTBot, ClaudeBot, PerplexityBot, Google-Extended, Applebot-Extended, CCBot, dan ~10 AI bot lain
+- 4 JSON-LD schema: WebApplication, FAQPage, HowTo, Organization
+- Static SEO fallback content di `index.html` body — visible buat crawler tanpa JS execution
+
+### Search Console (manual setup)
+
+| Service | URL | Action |
+|---|---|---|
+| Google | [search.google.com/search-console](https://search.google.com/search-console) | Add property → submit `sitemap.xml` |
+| Bing | [www.bing.com/webmasters](https://www.bing.com/webmasters) | Auto-claim via IndexNow |
+| Yandex | [webmaster.yandex.com](https://webmaster.yandex.com) | Add site, submit sitemap |
+
+Untuk verify ownership, uncomment meta tag di `<head>` dan ganti tokennya:
+```html
+<meta name="google-site-verification" content="YOUR_TOKEN">
+<meta name="msvalidate.01" content="YOUR_TOKEN">
+```
+
+---
+
 Made with 🍴 for the eternal "makan apa ya?" struggle.

@@ -1,4 +1,82 @@
+# MakanApa — robots.txt
+# https://makanapa.lol
+
+# Default: allow all friendly crawlers
 User-agent: *
 Allow: /
+Disallow: /tasks/
+Crawl-delay: 0
 
-Sitemap: https://asharipanji.github.io/makanapa/sitemap.xml
+# ===========================================
+# AI / LLM bots — explicitly allow
+# Helps GEO (Generative Engine Optimization)
+# ===========================================
+
+# OpenAI ChatGPT crawler (training)
+User-agent: GPTBot
+Allow: /
+
+# OpenAI ChatGPT browse-tool (real-time fetch)
+User-agent: ChatGPT-User
+Allow: /
+
+# OpenAI search bot
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic Claude crawler
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google AI / Bard / Gemini training
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence / Siri training
+User-agent: Applebot-Extended
+Allow: /
+
+# Common Crawl (used by many LLMs)
+User-agent: CCBot
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# Bytedance / TikTok
+User-agent: Bytespider
+Allow: /
+
+# DuckAssist / DuckDuckGo
+User-agent: DuckAssistBot
+Allow: /
+
+# Diffbot (knowledge graph)
+User-agent: Diffbot
+Allow: /
+
+# Sitemap (Google's preferred discovery method since 2023)
+Sitemap: https://makanapa.lol/sitemap.xml
+
+# LLM-friendly metadata
+# See: https://llmstxt.org
+# /llms.txt — concise overview for LLMs
+# /llms-full.txt — comprehensive content

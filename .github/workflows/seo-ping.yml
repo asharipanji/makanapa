@@ -1,0 +1,28 @@
+name: SEO ping (IndexNow)
+
+# Auto-submit URLs to search engines after every push to main
+# IndexNow → Bing, Yandex, Naver, Seznam (relayed)
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '**/*.md'
+      - 'humans.txt'
+      - '.gitignore'
+      - '.github/**'
+
+  workflow_dispatch:
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Wait for GitHub Pages deploy
+        run: sleep 90
+
+      - name: Submit URLs via IndexNow
+        run: bash scripts/ping-seo.sh

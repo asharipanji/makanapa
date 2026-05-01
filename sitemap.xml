@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://asharipanji.github.io/makanapa/</loc>
+    <loc>https://makanapa.lol/</loc>
     <lastmod>2026-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://makanapa.lol/og-image.svg</image:loc>
+      <image:title>MakanApa — Pertanyaan Terbesar Umat Manusia</image:title>
+      <image:caption>Aplikasi web untuk memilih makanan di Bandung</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://makanapa.lol/llms.txt</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://makanapa.lol/llms-full.txt</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

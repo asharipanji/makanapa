@@ -1,0 +1,17 @@
+/* TEAM */
+Maintainer: asharipanji
+GitHub: github.com/asharipanji
+
+/* SITE */
+Name: MakanApa
+URL: https://makanapa.lol
+Standards: HTML5, CSS3, JavaScript ES6+
+Components: vanilla (no framework)
+Software: VSCode, Claude Code
+
+/* THANKS */
+GoFood, GrabFood, ShopeeFood for the platforms
+Bandung kuliner scene for the inspiration
+
+/* PURPOSE */
+Mengakhiri drama "bebas, terserah" saat memutuskan makan.
