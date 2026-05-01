@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://asharipanji.github.io/makanapa/sitemap.xml

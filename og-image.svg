@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="50%" stop-color="#EC4899"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- decorative emojis -->
+  <text x="120" y="180" font-size="120" opacity="0.18">🍜</text>
+  <text x="980" y="200" font-size="120" opacity="0.18">🍕</text>
+  <text x="160" y="540" font-size="120" opacity="0.18">🍱</text>
+  <text x="1000" y="560" font-size="120" opacity="0.18">🍔</text>
+  <!-- main content -->
+  <text x="600" y="270" font-size="140" text-anchor="middle">🍴</text>
+  <text x="600" y="400" font-size="84" font-weight="800" text-anchor="middle" fill="#FFFFFF" font-family="Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif" letter-spacing="-2">MakanApa</text>
+  <text x="600" y="465" font-size="32" font-weight="600" text-anchor="middle" fill="#FFFFFF" opacity="0.95" font-family="Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Pertanyaan abadi, jawaban anti-mikir.</text>
+  <text x="600" y="540" font-size="24" font-weight="500" text-anchor="middle" fill="#FFFFFF" opacity="0.85" font-family="Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif">🎲 Roll dadu &nbsp;•&nbsp; 🎡 Spin roulette &nbsp;•&nbsp; 📍 Bandung</text>
+</svg>

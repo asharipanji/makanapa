@@ -4,13 +4,150 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#F97316">
-  <title>MakanApa — Makan apa ya?</title>
+
+  <!-- ===== Primary Meta Tags ===== -->
+  <title>MakanApa — Bingung Mau Makan Apa? Roll Dadu Yuk! 🎲</title>
+  <meta name="title" content="MakanApa — Bingung Mau Makan Apa? Roll Dadu Yuk! 🎲">
+  <meta name="description" content="MakanApa bantu kamu nemuin makanan tanpa drama 'bebas, terserah'. Roll dadu, spin roulette, atau cari sesuai diet, alergi, budget, dan cuisine favoritmu. Khusus area Bandung.">
+  <meta name="keywords" content="makan apa, bingung makan, rekomendasi makanan, makanan bandung, kuliner bandung, food roulette, dadu makanan, halal, vegetarian, makanan sehat, gofood, grabfood, shopeefood, makan apa ya">
+  <meta name="author" content="MakanApa">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="language" content="Indonesian">
+  <meta name="geo.region" content="ID-JB">
+  <meta name="geo.placename" content="Bandung">
+  <link rel="canonical" href="https://asharipanji.github.io/makanapa/">
+  <link rel="alternate" hreflang="id" href="https://asharipanji.github.io/makanapa/">
+  <link rel="alternate" hreflang="x-default" href="https://asharipanji.github.io/makanapa/">
+
+  <!-- ===== Open Graph / Facebook / WhatsApp ===== -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://asharipanji.github.io/makanapa/">
+  <meta property="og:title" content="MakanApa — Bingung Mau Makan Apa? Roll Dadu Yuk! 🎲">
+  <meta property="og:description" content="Pertanyaan abadi 'makan apa ya?' selesai dalam 1 detik. Roll dadu atau spin roulette buat dapet rekomendasi makanan yang cocok sama selera & budget kamu.">
+  <meta property="og:image" content="https://asharipanji.github.io/makanapa/og-image.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="MakanApa — Pertanyaan abadi, jawaban anti-mikir.">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="MakanApa">
+
+  <!-- ===== Twitter ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://asharipanji.github.io/makanapa/">
+  <meta name="twitter:title" content="MakanApa — Bingung Mau Makan Apa? Roll Dadu Yuk! 🎲">
+  <meta name="twitter:description" content="Pertanyaan abadi 'makan apa ya?' selesai dalam 1 detik. Roll dadu atau spin roulette.">
+  <meta name="twitter:image" content="https://asharipanji.github.io/makanapa/og-image.svg">
+  <meta name="twitter:image:alt" content="MakanApa — Pertanyaan abadi, jawaban anti-mikir.">
+
+  <!-- ===== PWA & iOS ===== -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MakanApa">
+  <meta name="application-name" content="MakanApa">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- ===== Icons (SVG inline = zero-extra-request) ===== -->
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="mask-icon" href="icon.svg" color="#F97316">
+
+  <!-- ===== Performance: preload critical JS ===== -->
+  <link rel="preload" href="js/data.js" as="script">
+  <link rel="preload" href="js/recommender.js" as="script">
+  <link rel="preload" href="js/app.js" as="script">
+  <link rel="preload" href="css/styles.css" as="style">
+
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- ===== Structured Data: WebApplication ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "MakanApa",
+    "alternateName": ["Makan Apa", "MakanApa Bandung"],
+    "description": "Aplikasi web yang membantu memutuskan mau makan apa. Roll dadu, spin roulette, atau filter berdasarkan diet, alergi, budget, dan cuisine favorit. Khusus area Bandung.",
+    "url": "https://asharipanji.github.io/makanapa/",
+    "applicationCategory": "FoodApplication",
+    "applicationSubCategory": "Food Recommendation",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "inLanguage": "id-ID",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "IDR"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Bandung",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Jawa Barat"
+      }
+    },
+    "featureList": [
+      "Roll dadu rekomendasi makanan",
+      "Spin roulette 8 pilihan",
+      "Filter diet halal/vegetarian/vegan",
+      "Filter alergi",
+      "Filter budget & cuisine",
+      "Mode Ahli Gizi & Free For All"
+    ]
+  }
+  </script>
+
+  <!-- ===== Structured Data: FAQ untuk rich snippet ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Apa itu MakanApa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "MakanApa adalah aplikasi web gratis yang membantu kamu memutuskan mau makan apa hari ini. Cukup roll dadu atau spin roulette untuk dapet rekomendasi makanan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah perlu bikin akun?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tidak. MakanApa gratis tanpa login. Data preferensi tersimpan lokal di browser kamu."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Area mana yang dicover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Saat ini MakanApa fokus ke area Bandung dan sekitarnya. Versi selanjutnya akan menambah kota lain."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
   <div id="app">
-    <!-- Konten dirender oleh app.js: onboarding atau main -->
+    <!-- Konten dirender oleh app.js: landing → onboarding → main -->
+    <noscript>
+      <div style="padding:60px 20px; text-align:center; font-family:sans-serif;">
+        <div style="font-size:64px;">🍴</div>
+        <h1 style="font-size:28px; margin-top:8px;">MakanApa</h1>
+        <p style="color:#6B6276; margin-top:8px; max-width:420px; margin-left:auto; margin-right:auto;">
+          Aplikasi ini butuh JavaScript untuk berjalan. Silakan aktifkan JavaScript di pengaturan browser kamu.
+        </p>
+      </div>
+    </noscript>
     <div style="padding: 60px 20px; text-align: center; color: #6B6276;">
       <div style="font-size: 56px;">🍴</div>
       <p style="margin-top: 8px;">Memuat MakanApa…</p>

@@ -17,11 +17,81 @@ const App = {
   init() {
     this.loadProfile();
     if (!this.state.profile) {
-      this.startOnboarding();
+      this.renderLanding();
     } else {
       this.state.mode = this.state.profile.mode || "free-for-all";
       this.renderMain();
     }
+  },
+
+  // ============================================================
+  // LANDING PAGE — entry point sebelum onboarding
+  // ============================================================
+  renderLanding() {
+    const root = document.getElementById("app");
+    root.innerHTML = `
+      <section class="landing" aria-labelledby="landing-title">
+        <div class="landing-hero">
+          <div class="landing-emoji" aria-hidden="true">🍴</div>
+          <h1 id="landing-title" class="landing-title">MakanApa</h1>
+          <p class="landing-tagline">Pertanyaan abadi, jawaban anti-mikir.</p>
+          <p class="landing-sub">
+            Bingung mau makan apa? Pilih cara mulai di bawah.
+          </p>
+        </div>
+
+        <div class="landing-cta" role="group" aria-label="Pilih cara mulai">
+          <button class="landing-btn primary" id="btn-quick" type="button" aria-label="Mulai cepat tanpa isi detail">
+            <span class="em" aria-hidden="true">🎲</span>
+            <span class="info">
+              <span class="label">Terserah</span>
+              <span class="desc">Skip detail. Langsung roll dadu sekarang.</span>
+            </span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </button>
+
+          <button class="landing-btn secondary" id="btn-personal" type="button" aria-label="Isi detail personal untuk rekomendasi lebih akurat">
+            <span class="em" aria-hidden="true">✨</span>
+            <span class="info">
+              <span class="label">Isi Detail Personal</span>
+              <span class="desc">Diet, alergi, budget — rekomendasi lebih akurat.</span>
+            </span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+
+        <ul class="landing-features" aria-label="Fitur MakanApa">
+          <li><span aria-hidden="true">🎲</span><span>Roll dadu acak — re-roll kalau gak cocok</span></li>
+          <li><span aria-hidden="true">🎡</span><span>Spin roulette dari 8 pilihan kurasi</span></li>
+          <li><span aria-hidden="true">📍</span><span>Khusus Bandung — area sekitar kamu</span></li>
+          <li><span aria-hidden="true">🔒</span><span>Data tersimpan di browser. Privat.</span></li>
+        </ul>
+
+        <p class="landing-foot">Gratis. Tanpa login. Tanpa pesta data.</p>
+      </section>
+    `;
+
+    document.getElementById("btn-quick").onclick = () => this.startQuick();
+    document.getElementById("btn-personal").onclick = () => this.startOnboarding();
+  },
+
+  // Quick start — pakai default profile, langsung ke main
+  startQuick() {
+    this.state.profile = {
+      name: "Kamu",
+      area: "lainnya",
+      diet: [],
+      allergies: [],
+      spice: 2,
+      budget: "medium",
+      cuisines: [],
+      vibes: [],
+      mode: "free-for-all"
+    };
+    this.state.mode = "free-for-all";
+    this.saveProfile();
+    this.renderMain();
+    this.toast("Yuk roll dadu! 🎲");
   },
 
   // ============ STORAGE ============
@@ -439,7 +509,7 @@ const App = {
         if (confirm("Yakin reset profil? Pengaturan akan hilang.")) {
           this.clearProfile();
           this.closeModal();
-          this.startOnboarding();
+          this.renderLanding();
         }
       };
     });
