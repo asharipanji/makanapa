@@ -78,6 +78,11 @@ const Recommender = {
       s += 2;
     }
     if (food.isTrending) s += 1;
+    // Tag-based boost: viral & fyp lebih sering muncul, hidden-gem sedikit boost
+    const tags = food.tags || [];
+    if (tags.includes("viral")) s += 2;
+    if (tags.includes("fyp")) s += 1.5;
+    if (tags.includes("hidden-gem")) s += 1;
     return s;
   },
 
@@ -151,10 +156,31 @@ const Recommender = {
     } else if (food.isTrending) {
       badges.push({ icon: "🔥", label: "Trending", color: "#EF4444" });
     }
+    const tags = food.tags || [];
+    if (tags.includes("viral")) badges.push({ icon: "🌟", label: "Viral", color: "#EC4899" });
+    if (tags.includes("fyp")) badges.push({ icon: "📱", label: "FYP", color: "#0EA5E9" });
+    if (tags.includes("hidden-gem")) badges.push({ icon: "💎", label: "Hidden gem", color: "#8B5CF6" });
     if (m?.minHealthScore >= 7 && food.healthScore >= 8) {
       badges.push({ icon: "💚", label: "Pilihan sehat", color: "#16A34A" });
     }
     return badges;
+  },
+
+  /**
+   * Items dengan tag tertentu untuk section khusus.
+   */
+  byTag(tag, limit = 6, profile = null, mode = null) {
+    let pool = FOODS.filter((f) => (f.tags || []).includes(tag));
+    if (profile && mode) {
+      pool = this.filter(profile, mode, pool);
+    }
+    // Sort by score (kalau ada profile) atau acak
+    if (profile) {
+      pool.sort((a, b) => this.scoreFood(b, profile) - this.scoreFood(a, profile));
+    } else {
+      pool.sort(() => Math.random() - 0.5);
+    }
+    return pool.slice(0, limit);
   },
 
   /**

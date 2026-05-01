@@ -570,5 +570,371 @@ const FOODS = [
     healthScore: 8, macros: { kcal: 360, p: 16, c: 48, f: 10 },
     description: "Kuah asem segar + nangka muda + jagung + melinjo + tempe bacem manis. Native vegan Indonesia.",
     isTrending: false, trendingAreas: []
+  },
+
+  // ============================================================
+  // 🔥 VIRAL / FYP 2024-2026
+  // ============================================================
+  {
+    id: "cromboloni", name: "Cromboloni Pistachio", emoji: "🥐",
+    cuisine: "fusion", type: "dessert", tags: ["viral", "fyp"],
+    vibes: ["sweet", "indulgent"],
+    diet: ["halal", "vegetarian"], allergies: ["gluten", "dairy", "eggs", "nuts"], spice: 0,
+    priceTier: "medium", estPrice: 55000,
+    healthScore: 2, macros: { kcal: 540, p: 9, c: 58, f: 30 },
+    description: "Hibrida croissant x bomboloni isi krim pistachio. Layer-nya nge-snap, isinya banjir krim. Wajib coba minimal sekali.",
+    isTrending: true, trendingAreas: ["dago", "riau", "sukajadi"]
+  },
+  {
+    id: "knafeh-croissant", name: "Knafeh Croissant Pistachio", emoji: "🥐",
+    cuisine: "fusion", type: "dessert", tags: ["viral", "fyp"],
+    vibes: ["sweet", "indulgent"],
+    diet: ["halal", "vegetarian"], allergies: ["gluten", "dairy", "eggs", "nuts"], spice: 0,
+    priceTier: "high", estPrice: 78000,
+    healthScore: 2, macros: { kcal: 620, p: 11, c: 55, f: 38 },
+    description: "Croissant isi kataifi crispy + cream cheese + pistachio cream + drizzle madu. Versi croissant dari Dubai chocolate.",
+    isTrending: true, trendingAreas: ["dago", "riau"]
+  },
+  {
+    id: "dubai-chocolate", name: "Dubai Chocolate Strawberry", emoji: "🍫",
+    cuisine: "fusion", type: "dessert", tags: ["viral", "fyp"],
+    vibes: ["sweet", "indulgent"],
+    diet: ["halal", "vegetarian"], allergies: ["dairy", "nuts"], spice: 0,
+    priceTier: "high", estPrice: 95000,
+    healthScore: 2, macros: { kcal: 480, p: 8, c: 52, f: 26 },
+    description: "Bar coklat Dubai filling pistachio + kataifi crispy, dipasangkan stroberi segar. Trend yang gak mau berhenti.",
+    isTrending: true, trendingAreas: ["dago", "riau", "sukajadi"]
+  },
+  {
+    id: "korean-garlic-bread", name: "Korean Garlic Cream Cheese Bread", emoji: "🧄",
+    cuisine: "korean", type: "snack", tags: ["viral"],
+    vibes: ["indulgent", "comfort"],
+    diet: ["halal", "vegetarian"], allergies: ["gluten", "dairy", "eggs"], spice: 0,
+    priceTier: "low", estPrice: 25000,
+    healthScore: 3, macros: { kcal: 480, p: 12, c: 50, f: 24 },
+    description: "Roti bulat dipotong 6, dicelup butter bawang putih, isian cream cheese manis-asin. Crispy luar, lumer dalam.",
+    isTrending: true, trendingAreas: ["pasteur", "riau"]
+  },
+  {
+    id: "salted-egg-chicken", name: "Salted Egg Chicken Rice", emoji: "🍳",
+    cuisine: "fusion", type: "food", tags: ["viral"],
+    vibes: ["indulgent", "comfort"],
+    diet: ["halal"], allergies: ["eggs", "dairy", "gluten"], spice: 1,
+    priceTier: "medium", estPrice: 52000,
+    healthScore: 4, macros: { kcal: 720, p: 36, c: 65, f: 32 },
+    description: "Ayam crispy disiram saus telur asin creamy gurih + nasi + sayur. Comfort food era 2020-an yang ga turun-turun.",
+    isTrending: true, trendingAreas: ["pasteur", "buah-batu"]
+  },
+  {
+    id: "mochi-donut", name: "Mochi Donut Mix", emoji: "🍩",
+    cuisine: "korean", type: "dessert", tags: ["viral", "fyp"],
+    vibes: ["sweet", "indulgent"],
+    diet: ["halal", "vegetarian"], allergies: ["gluten", "dairy", "eggs"], spice: 0,
+    priceTier: "low", estPrice: 32000,
+    healthScore: 3, macros: { kcal: 380, p: 6, c: 52, f: 16 },
+    description: "Donat ala Korea, tekstur kenyal mochi + glaze warna-warni. Bentuk rantai bola yang Instagrammable.",
+    isTrending: true, trendingAreas: ["dago", "pasteur"]
+  },
+  {
+    id: "smashed-burger", name: "Smashed Beef Burger Double", emoji: "🍔",
+    cuisine: "western", type: "food", tags: ["viral", "fyp"],
+    vibes: ["indulgent", "hearty"],
+    diet: ["halal"], allergies: ["gluten", "dairy"], spice: 0,
+    priceTier: "high", estPrice: 88000,
+    healthScore: 3, macros: { kcal: 920, p: 44, c: 55, f: 56 },
+    description: "Dua patty digepuk tipis di atas hot plate, edge crispy, double cheese leleh, saus signature. Burger paradigma 2024-2026.",
+    isTrending: true, trendingAreas: ["dago", "riau"]
+  },
+  {
+    id: "birria-tacos", name: "Birria Tacos + Consomé", emoji: "🌮",
+    cuisine: "fusion", type: "food", tags: ["viral", "fyp"],
+    vibes: ["hearty", "spicy"],
+    diet: ["halal"], allergies: ["gluten", "dairy"], spice: 3,
+    priceTier: "high", estPrice: 92000,
+    healthScore: 5, macros: { kcal: 760, p: 42, c: 52, f: 38 },
+    description: "Taco isi short rib slow-cook, di-celup consomé kaldu rempah pedas. Aesthetic dipping ala TikTok.",
+    isTrending: true, trendingAreas: ["dago", "riau"]
+  },
+  {
+    id: "cheese-tea", name: "Cheese Foam Oolong Tea", emoji: "🧀",
+    cuisine: "chinese", type: "drink", tags: ["fyp"],
+    vibes: ["sweet"],
+    diet: ["halal", "vegetarian"], allergies: ["dairy"], spice: 0,
+    priceTier: "low", estPrice: 28000,
+    healthScore: 4, macros: { kcal: 220, p: 5, c: 32, f: 8 },
+    description: "Teh oolong dingin di-topping cheese foam asin manis. Aturan main: minum miring biar cheese dan teh nyatu.",
+    isTrending: true, trendingAreas: ["dago", "pasteur"]
+  },
+  {
+    id: "buldak-mukbang", name: "Buldak Carbonara Mukbang", emoji: "🍝",
+    cuisine: "korean", type: "food", tags: ["viral", "fyp"],
+    vibes: ["spicy", "indulgent"],
+    diet: ["halal"], allergies: ["gluten", "dairy", "eggs", "soy"], spice: 5,
+    priceTier: "low", estPrice: 32000,
+    healthScore: 2, macros: { kcal: 680, p: 18, c: 78, f: 30 },
+    description: "Buldak (mie ayam pedas) campur saus carbonara creamy + telur + keju + sosis. Pedasnya nyiksa, tapi addictif.",
+    isTrending: true, trendingAreas: ["pasteur", "buah-batu"]
+  },
+  {
+    id: "basque-cheesecake", name: "Basque Burnt Cheesecake", emoji: "🍰",
+    cuisine: "western", type: "dessert", tags: ["viral"],
+    vibes: ["sweet", "indulgent"],
+    diet: ["halal", "vegetarian"], allergies: ["dairy", "eggs", "gluten"], spice: 0,
+    priceTier: "medium", estPrice: 48000,
+    healthScore: 3, macros: { kcal: 460, p: 9, c: 32, f: 32 },
+    description: "Cheesecake ala Spanyol, atasnya gosong sengaja, dalemnya mulus creamy. Kontras pahit & manis.",
+    isTrending: true, trendingAreas: ["dago", "riau"]
+  },
+  {
+    id: "strawberry-matcha", name: "Strawberry Matcha Latte", emoji: "🍓",
+    cuisine: "japanese", type: "drink", tags: ["viral", "fyp"],
+    vibes: ["sweet"],
+    diet: ["halal", "vegetarian"], allergies: ["dairy"], spice: 0,
+    priceTier: "low", estPrice: 35000,
+    healthScore: 5, macros: { kcal: 240, p: 6, c: 32, f: 10 },
+    description: "Layer pink strawberry compote + susu + matcha hijau pekat. Aesthetic banget di IG, rasanya seimbang.",
+    isTrending: true, trendingAreas: ["dago", "riau", "sukajadi"]
+  },
+  {
+    id: "dirty-matcha", name: "Dirty Matcha Latte", emoji: "🍵",
+    cuisine: "japanese", type: "drink", tags: ["viral", "fyp"],
+    vibes: ["indulgent"],
+    diet: ["halal", "vegetarian"], allergies: ["dairy"], spice: 0,
+    priceTier: "medium", estPrice: 42000,
+    healthScore: 5, macros: { kcal: 220, p: 5, c: 24, f: 10 },
+    description: "Matcha latte di-shot espresso. Kombinasi pahit-manis-earthy yang viral di kafe specialty.",
+    isTrending: true, trendingAreas: ["dago", "riau", "sukajadi"]
+  },
+
+  // ============================================================
+  // 💎 HIDDEN GEMS BANDUNG
+  // ============================================================
+  {
+    id: "mie-kocok", name: "Mie Kocok Mang Dadeng", emoji: "🍜",
+    cuisine: "sundanese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort", "hearty"],
+    diet: ["halal"], allergies: ["gluten"], spice: 1,
+    priceTier: "low", estPrice: 28000,
+    healthScore: 6, macros: { kcal: 480, p: 26, c: 55, f: 16 },
+    description: "Mie kuning + kuah kaldu sapi + kikil + tauge + bawang goreng. Legendaris dari Cibadak, kuahnya gak ada lawan.",
+    isTrending: false, trendingAreas: ["cibadak"]
+  },
+  {
+    id: "cireng-cipaganti", name: "Cireng Rujak Cipaganti", emoji: "🥟",
+    cuisine: "sundanese", type: "snack", tags: ["hidden-gem", "viral"],
+    vibes: ["comfort", "spicy"],
+    diet: ["halal", "vegetarian"], allergies: ["gluten"], spice: 3,
+    priceTier: "low", estPrice: 18000,
+    healthScore: 4, macros: { kcal: 340, p: 6, c: 55, f: 12 },
+    description: "Cireng goreng dicocol bumbu rujak pedes manis. Hidden gem viral karena anti-mainstream.",
+    isTrending: true, trendingAreas: ["sukajadi", "cibadak"]
+  },
+  {
+    id: "surabi-imut", name: "Surabi Imut Setiabudi", emoji: "🥞",
+    cuisine: "sundanese", type: "snack", tags: ["hidden-gem"],
+    vibes: ["sweet", "comfort"],
+    diet: ["halal", "vegetarian"], allergies: ["gluten", "dairy"], spice: 0,
+    priceTier: "low", estPrice: 22000,
+    healthScore: 4, macros: { kcal: 340, p: 7, c: 50, f: 12 },
+    description: "Surabi mini topping macem-macem: keju, oreo, mayo, sosis, kinca. Open until midnight, anti-galau.",
+    isTrending: false, trendingAreas: ["sukajadi"]
+  },
+  {
+    id: "yoghurt-cisangkuy", name: "Yoghurt Cisangkuy", emoji: "🥛",
+    cuisine: "indonesian", type: "drink", tags: ["hidden-gem"],
+    vibes: ["sweet", "healthy"],
+    diet: ["halal", "vegetarian"], allergies: ["dairy"], spice: 0,
+    priceTier: "low", estPrice: 18000,
+    healthScore: 7, macros: { kcal: 180, p: 6, c: 28, f: 4 },
+    description: "Yoghurt segar topping buah, granola, atau strawberry sirup. Legendaris sejak 1972, cuma di Bandung.",
+    isTrending: false, trendingAreas: ["sukajadi"]
+  },
+  {
+    id: "es-cendol-elizabeth", name: "Es Cendol Elizabeth", emoji: "🥤",
+    cuisine: "sundanese", type: "drink", tags: ["hidden-gem"],
+    vibes: ["sweet", "comfort"],
+    diet: ["halal", "vegetarian", "vegan"], allergies: [], spice: 0,
+    priceTier: "low", estPrice: 15000,
+    healthScore: 4, macros: { kcal: 220, p: 2, c: 48, f: 4 },
+    description: "Cendol hijau pandan + santan + gula merah + es serut. Legendaris Bandung, segarnya juara.",
+    isTrending: false, trendingAreas: ["cibadak"]
+  },
+  {
+    id: "lotek-kalipah", name: "Lotek Kalipah Apo", emoji: "🥗",
+    cuisine: "sundanese", type: "food", tags: ["hidden-gem"],
+    vibes: ["healthy", "comfort"],
+    diet: ["halal", "vegetarian"], allergies: ["nuts"], spice: 2,
+    priceTier: "low", estPrice: 22000,
+    healthScore: 8, macros: { kcal: 380, p: 14, c: 50, f: 14 },
+    description: "Sayuran rebus + bumbu kacang ulekan tangan + kerupuk. Tempat legenda di gang Kalipah Apo.",
+    isTrending: false, trendingAreas: ["cibadak"]
+  },
+  {
+    id: "lumpia-basah-gang-aut", name: "Lumpia Basah Gang Aut", emoji: "🥬",
+    cuisine: "sundanese", type: "snack", tags: ["hidden-gem"],
+    vibes: ["comfort"],
+    diet: ["halal", "vegetarian"], allergies: ["gluten", "eggs"], spice: 1,
+    priceTier: "low", estPrice: 18000,
+    healthScore: 6, macros: { kcal: 320, p: 10, c: 50, f: 8 },
+    description: "Lumpia basah isi bengkuang + telur + saus tauco. Gak digoreng — hangat, lembut, manis-asin balance.",
+    isTrending: false, trendingAreas: ["cibadak"]
+  },
+  {
+    id: "soto-bandung-iga", name: "Soto Bandung Iga", emoji: "🍲",
+    cuisine: "sundanese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort", "healthy"],
+    diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 38000,
+    healthScore: 7, macros: { kcal: 460, p: 32, c: 32, f: 18 },
+    description: "Kuah bening rempah + iga sapi + lobak + kedelai goreng. Khas Bandung yang under-the-radar.",
+    isTrending: false, trendingAreas: ["sukajadi", "cibadak"]
+  },
+  {
+    id: "roti-gempol", name: "Roti Gempol Bakar Coklat Keju", emoji: "🍞",
+    cuisine: "indonesian", type: "snack", tags: ["hidden-gem"],
+    vibes: ["sweet", "comfort"],
+    diet: ["halal", "vegetarian"], allergies: ["gluten", "dairy"], spice: 0,
+    priceTier: "low", estPrice: 18000,
+    healthScore: 3, macros: { kcal: 380, p: 8, c: 48, f: 16 },
+    description: "Roti panggang legend Bandung sejak 1958. Mentega gemporrr, isi coklat-keju, nostalgia maksimal.",
+    isTrending: false, trendingAreas: ["cibadak", "sukajadi"]
+  },
+  {
+    id: "sate-maranggi", name: "Sate Maranggi Kalipah", emoji: "🍢",
+    cuisine: "sundanese", type: "food", tags: ["hidden-gem"],
+    vibes: ["hearty"],
+    diet: ["halal"], allergies: [], spice: 2,
+    priceTier: "medium", estPrice: 45000,
+    healthScore: 6, macros: { kcal: 540, p: 38, c: 35, f: 24 },
+    description: "Sate sapi marinasi kecap + ketumbar, dibakar pas. Pakai sambel oncom + nasi/lontong. Khas Sunda.",
+    isTrending: false, trendingAreas: ["cibadak"]
+  },
+
+  // ============================================================
+  // ☕ DRINKS — KEKINIAN & TRADISIONAL
+  // ============================================================
+  {
+    id: "kopi-susu-gula-aren", name: "Es Kopi Susu Gula Aren", emoji: "☕",
+    cuisine: "indonesian", type: "drink", tags: ["fyp"],
+    vibes: ["comfort", "sweet"],
+    diet: ["halal", "vegetarian"], allergies: ["dairy"], spice: 0,
+    priceTier: "low", estPrice: 22000,
+    healthScore: 4, macros: { kcal: 180, p: 4, c: 28, f: 6 },
+    description: "Espresso + susu segar + gula aren cair. Sederhana tapi addictif. Standar kopi kekinian Indonesia.",
+    isTrending: true, trendingAreas: ["dago", "riau", "antapani", "buah-batu"]
+  },
+  {
+    id: "matcha-latte", name: "Matcha Latte Original", emoji: "🍵",
+    cuisine: "japanese", type: "drink", tags: ["fyp"],
+    vibes: ["healthy"],
+    diet: ["halal", "vegetarian"], allergies: ["dairy"], spice: 0,
+    priceTier: "medium", estPrice: 38000,
+    healthScore: 6, macros: { kcal: 200, p: 5, c: 22, f: 9 },
+    description: "Bubuk matcha grade upacara + susu fresh. Pahit-earthy yang seimbang. Anti-jet-lag option.",
+    isTrending: true, trendingAreas: ["dago", "riau"]
+  },
+  {
+    id: "thai-tea", name: "Thai Tea Boba Original", emoji: "🧋",
+    cuisine: "fusion", type: "drink", tags: ["fyp"],
+    vibes: ["sweet"],
+    diet: ["halal", "vegetarian"], allergies: ["dairy", "gluten"], spice: 0,
+    priceTier: "low", estPrice: 22000,
+    healthScore: 3, macros: { kcal: 380, p: 4, c: 68, f: 8 },
+    description: "Teh thai oranye creamy + boba kenyal. Sweet but balanced. Cocok buat afternoon slump.",
+    isTrending: true, trendingAreas: ["pasteur", "buah-batu"]
+  },
+  {
+    id: "yuzu-citron", name: "Yuzu Citron Tea", emoji: "🍋",
+    cuisine: "korean", type: "drink", tags: ["viral"],
+    vibes: ["healthy", "light"],
+    diet: ["halal", "vegetarian", "vegan"], allergies: [], spice: 0,
+    priceTier: "low", estPrice: 28000,
+    healthScore: 7, macros: { kcal: 140, p: 1, c: 34, f: 0 },
+    description: "Selai yuzu Korea diseduh air panas/dingin. Citrus segar, vitamin C tinggi, viral karena trend Korea.",
+    isTrending: true, trendingAreas: ["pasteur"]
+  },
+  {
+    id: "butterfly-pea-lemon", name: "Butterfly Pea Lemonade", emoji: "💜",
+    cuisine: "fusion", type: "drink", tags: ["fyp"],
+    vibes: ["light"],
+    diet: ["halal", "vegetarian", "vegan"], allergies: [], spice: 0,
+    priceTier: "low", estPrice: 25000,
+    healthScore: 7, macros: { kcal: 90, p: 0, c: 22, f: 0 },
+    description: "Bunga telang + lemonade. Berubah dari ungu jadi pink saat lemon dimasukkin. Magic & antioksidan tinggi.",
+    isTrending: true, trendingAreas: ["dago", "riau"]
+  },
+  {
+    id: "es-bandrek", name: "Es Bandrek Aci Bandung", emoji: "🌶️",
+    cuisine: "sundanese", type: "drink", tags: ["hidden-gem"],
+    vibes: ["comfort", "sweet"],
+    diet: ["halal", "vegetarian", "vegan"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 15000,
+    healthScore: 5, macros: { kcal: 160, p: 1, c: 36, f: 2 },
+    description: "Bandrek dingin: jahe + gula aren + serai + kayu manis + kelapa muda. Hangat-segar paradoks Sunda.",
+    isTrending: false, trendingAreas: ["cibadak", "sukajadi"]
+  },
+  {
+    id: "es-goyobod", name: "Es Goyobod Bandung", emoji: "🥥",
+    cuisine: "sundanese", type: "drink", tags: ["hidden-gem"],
+    vibes: ["sweet", "comfort"],
+    diet: ["halal", "vegetarian", "vegan"], allergies: [], spice: 0,
+    priceTier: "low", estPrice: 18000,
+    healthScore: 4, macros: { kcal: 240, p: 2, c: 48, f: 4 },
+    description: "Goyobod (jelly hunkwe) + roti tawar + alpukat + kelapa muda + santan + gula aren. Dessert drink legendaris.",
+    isTrending: false, trendingAreas: ["cibadak"]
+  },
+  {
+    id: "wedang-jahe-susu", name: "Wedang Jahe Susu Hangat", emoji: "🫖",
+    cuisine: "indonesian", type: "drink", tags: ["hidden-gem"],
+    vibes: ["comfort", "healthy"],
+    diet: ["halal", "vegetarian"], allergies: ["dairy"], spice: 1,
+    priceTier: "low", estPrice: 12000,
+    healthScore: 7, macros: { kcal: 140, p: 4, c: 22, f: 4 },
+    description: "Jahe geprek + susu segar + gula aren + sereh. Hangat di tenggorokan, malam atau hujan deres.",
+    isTrending: false, trendingAreas: []
+  },
+
+  // ============================================================
+  // 🍱 BOWLS / HEALTHY (extra)
+  // ============================================================
+  {
+    id: "chicken-pesto-bowl", name: "Chicken Pesto Quinoa Bowl", emoji: "🥗",
+    cuisine: "fusion", type: "food", tags: ["fyp"],
+    vibes: ["healthy", "hearty"],
+    diet: ["halal"], allergies: ["nuts", "dairy"], spice: 0,
+    priceTier: "high", estPrice: 78000,
+    healthScore: 9, macros: { kcal: 540, p: 38, c: 42, f: 22 },
+    description: "Grilled chicken + pesto basil + quinoa + sayur panggang + parmesan. Healthy aesthetic 100%.",
+    isTrending: true, trendingAreas: ["dago", "riau"]
+  },
+  {
+    id: "yakiniku-don", name: "Beef Yakiniku Don", emoji: "🥩",
+    cuisine: "japanese", type: "food", tags: ["fyp"],
+    vibes: ["hearty", "indulgent"],
+    diet: ["halal"], allergies: ["soy", "gluten"], spice: 1,
+    priceTier: "medium", estPrice: 68000,
+    healthScore: 6, macros: { kcal: 720, p: 38, c: 78, f: 26 },
+    description: "Slice beef yakiniku + nasi + onsen egg + bawang panggang + saus shoyu manis. Comfort don bowl.",
+    isTrending: true, trendingAreas: ["pasteur", "sukajadi"]
+  },
+  {
+    id: "sambel-matah-chicken", name: "Sambel Matah Chicken Bowl", emoji: "🌶️",
+    cuisine: "indonesian", type: "food", tags: ["fyp"],
+    vibes: ["spicy", "healthy"],
+    diet: ["halal"], allergies: [], spice: 4,
+    priceTier: "medium", estPrice: 48000,
+    healthScore: 7, macros: { kcal: 480, p: 36, c: 42, f: 18 },
+    description: "Ayam suwir bumbu + sambel matah Bali (bawang merah, sereh, jeruk limau, cabe) + nasi. Pedas segar.",
+    isTrending: true, trendingAreas: ["riau", "antapani"]
+  },
+  {
+    id: "egg-sandwich", name: "Japanese Tamago Sando", emoji: "🥪",
+    cuisine: "japanese", type: "snack", tags: ["fyp"],
+    vibes: ["comfort", "light"],
+    diet: ["halal", "vegetarian"], allergies: ["gluten", "dairy", "eggs"], spice: 0,
+    priceTier: "low", estPrice: 32000,
+    healthScore: 5, macros: { kcal: 380, p: 14, c: 38, f: 18 },
+    description: "Sandwich roti shokupan tebal + telur cincang creamy + mayo Jepang. Pillowy & rich. Konbini vibes.",
+    isTrending: true, trendingAreas: ["riau", "dago"]
   }
 ];

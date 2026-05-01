@@ -410,16 +410,21 @@ const App = {
         </div>
         <div class="mode-tagline">${mode.tagline}</div>
 
-        <div class="cta-row">
+        <div class="cta-row triple">
           <button class="cta-card dice" id="btn-dice">
             <span class="em">🎲</span>
             <span class="label">Roll Dadu</span>
-            <span class="desc">Random 1 makanan, bisa re-roll</span>
+            <span class="desc">Random 1, bisa re-roll</span>
           </button>
           <button class="cta-card roulette" id="btn-roulette">
             <span class="em">🎡</span>
-            <span class="label">Spin Roulette</span>
-            <span class="desc">8 pilihan, putar dan mendarat</span>
+            <span class="label">Roulette</span>
+            <span class="desc">8 pilihan, putar mendarat</span>
+          </button>
+          <button class="cta-card slot" id="btn-slot">
+            <span class="em">🎰</span>
+            <span class="label">Spin Wheel</span>
+            <span class="desc">Slot scroll cepat</span>
           </button>
         </div>
 
@@ -454,6 +459,7 @@ const App = {
     });
     document.getElementById("btn-dice").onclick = () => this.startDice();
     document.getElementById("btn-roulette").onclick = () => this.startRoulette();
+    document.getElementById("btn-slot").onclick = () => this.startSlot();
     document.querySelectorAll("[data-food]").forEach((b) => {
       b.onclick = () => {
         const food = FOODS.find((f) => f.id === b.dataset.food);
@@ -566,7 +572,7 @@ const App = {
   },
 
   // ============================================================
-  // ROULETTE
+  // ROULETTE — fortune wheel (fixed animation)
   // ============================================================
   startRoulette() {
     const eligible = Recommender.filter(this.state.profile, this.state.mode);
@@ -579,12 +585,12 @@ const App = {
     this.renderRoulette();
   },
 
-  renderRoulette(landedIdx = null) {
+  renderRoulette() {
     const opts = this.state.rouletteOptions;
     const N = opts.length;
     const colors = ["#F97316", "#14B8A6", "#8B5CF6", "#EC4899", "#0EA5E9", "#FBBF24", "#EF4444", "#10B981"];
 
-    // SVG segments
+    // Build SVG segments + labels
     const segs = [];
     const labels = [];
     const cx = 150, cy = 150, r = 145;
@@ -605,17 +611,7 @@ const App = {
       const ma = (midAngle * Math.PI) / 180;
       const lx = cx + (r * 0.62) * Math.cos(ma);
       const ly = cy + (r * 0.62) * Math.sin(ma);
-      labels.push(`<text x="${lx.toFixed(2)}" y="${ly.toFixed(2)}" text-anchor="middle" dominant-baseline="middle" font-size="26">${opts[i].emoji}</text>`);
-    }
-
-    // Hitung target rotation
-    let rotation = 0;
-    if (landedIdx !== null) {
-      // Segment i berpusat di sudut: (i*360/N + 180/N) - 90 (relatif ke 12 o'clock yang -90)
-      // Pointer di top (-90 deg). Wheel harus dirotasi sehingga segment center berada di -90.
-      // Jadi rotation = -90 - ((i*360/N) + 180/N - 90) = -((i*360/N) + 180/N)
-      const target = -((landedIdx * 360) / N + 180 / N);
-      rotation = 360 * 6 + target; // 6 putaran penuh
+      labels.push(`<text x="${lx.toFixed(2)}" y="${ly.toFixed(2)}" text-anchor="middle" dominant-baseline="middle" font-size="28">${opts[i].emoji}</text>`);
     }
 
     const html = `
@@ -624,39 +620,185 @@ const App = {
           <div class="modal-handle"></div>
           <button class="modal-close" data-close>×</button>
           <div class="roulette-stage">
-            <div style="font-size:18px; font-weight:800; margin-bottom:14px;">🎡 Spin the Wheel</div>
+            <div class="roulette-title">🎡 Spin the Wheel</div>
+            <div class="roulette-sub" id="roulette-sub">${N} pilihan siap diputar</div>
             <div class="wheel-wrap">
-              <div class="wheel-pointer"></div>
+              <div class="wheel-pointer" aria-hidden="true"></div>
               <svg class="wheel-svg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-                <g class="wheel-rotor" id="wheel-rotor" style="${landedIdx !== null ? `transform: rotate(${rotation}deg);` : ""}">
+                <g class="wheel-rotor" id="wheel-rotor">
                   ${segs.join("")}
                   ${labels.join("")}
                 </g>
               </svg>
               <div class="wheel-center">🎯</div>
             </div>
-            <div style="margin-top:18px; display:grid; gap:8px;">
-              ${landedIdx === null
-                ? `<button class="btn-reroll" id="btn-spin">▶ Spin Sekarang!</button>`
-                : `<div style="font-size:13px; color:var(--ink-soft);">Mendarat di...</div>`
-              }
+            <ul class="roulette-list" id="roulette-list">
+              ${opts.map((f, i) => `
+                <li data-i="${i}">
+                  <span class="dot" style="background:${colors[i % colors.length]}"></span>
+                  <span class="em">${f.emoji}</span>
+                  <span class="nm">${f.name}</span>
+                </li>
+              `).join("")}
+            </ul>
+            <div class="roulette-actions">
+              <button class="btn-reroll" id="btn-spin">▶ Spin Sekarang!</button>
             </div>
           </div>
         </div>
       </div>
     `;
+
     this.showModal(html, (root) => {
+      const rotor = root.querySelector("#wheel-rotor");
       const spinBtn = root.querySelector("#btn-spin");
-      if (spinBtn) {
-        spinBtn.onclick = () => {
-          // Pre-pick winner with weighted picker
-          const winner = Recommender.pickOne(opts, this.state.profile);
-          const winnerIdx = opts.indexOf(winner);
-          this.renderRoulette(winnerIdx);
-          // Setelah animasi selesai, buka result
-          setTimeout(() => this.openResult(winner, "roulette"), 4400);
-        };
+      const subEl = root.querySelector("#roulette-sub");
+      const listEl = root.querySelector("#roulette-list");
+      let spinning = false;
+
+      const doSpin = () => {
+        if (spinning) return;
+        spinning = true;
+
+        // Pick winner via weighted RNG
+        const winner = Recommender.pickOne(opts, this.state.profile);
+        const winnerIdx = opts.indexOf(winner);
+
+        // Compute target rotation
+        // Segment center sudut absolut: (i*360/N) + (180/N) - 90 (dari -y axis = top)
+        // Pointer di -90 (top). Mau segment center @ -90 → rotor harus dirotasi: -((i*360/N) + 180/N)
+        // Jitter random ±(180/N/2) supaya enggak selalu landing pas center
+        const baseTarget = -((winnerIdx * 360) / N + 180 / N);
+        const jitter = (Math.random() - 0.5) * (180 / N) * 0.7;
+        const rotation = 360 * 6 + baseTarget + jitter;
+
+        // Trigger CSS transition: set transform on existing element so transition fires
+        // Use rAF to ensure browser paints initial state before applying target
+        requestAnimationFrame(() => {
+          rotor.style.transform = `rotate(${rotation}deg)`;
+        });
+
+        spinBtn.disabled = true;
+        spinBtn.textContent = "⏳ Sedang berputar...";
+        subEl.textContent = "Tahan napas...";
+
+        // Highlight winner item in list
+        setTimeout(() => {
+          listEl.querySelectorAll("li").forEach((li) => li.classList.remove("win"));
+          const winLi = listEl.querySelector(`li[data-i="${winnerIdx}"]`);
+          if (winLi) winLi.classList.add("win");
+          subEl.innerHTML = `🎯 Mendarat di <strong>${winner.name}</strong>`;
+        }, 4000);
+
+        setTimeout(() => this.openResult(winner, "roulette"), 4600);
+      };
+
+      spinBtn.onclick = doSpin;
+    });
+  },
+
+  // ============================================================
+  // SPIN WHEEL — slot machine style
+  // ============================================================
+  startSlot() {
+    const eligible = Recommender.filter(this.state.profile, this.state.mode);
+    if (eligible.length === 0) {
+      this.openEmpty();
+      return;
+    }
+    this.renderSlot(eligible);
+  },
+
+  renderSlot(eligible) {
+    const winner = Recommender.pickOne(eligible, this.state.profile);
+    const STRIP_LEN = 28;        // total kartu di strip
+    const WINNER_AT = 24;        // posisi winner (0-indexed)
+    const CARD_H = 84;           // tinggi kartu px (sinkron CSS)
+
+    // Build strip: random foods, masukkan winner di posisi WINNER_AT
+    const strip = [];
+    for (let i = 0; i < STRIP_LEN; i++) {
+      if (i === WINNER_AT) {
+        strip.push(winner);
+      } else {
+        // shuffle, jangan sampai winner duplikat persis sebelum winner-position
+        let pick;
+        do {
+          pick = eligible[Math.floor(Math.random() * eligible.length)];
+        } while (i === WINNER_AT - 1 && pick.id === winner.id);
+        strip.push(pick);
       }
+    }
+
+    const cuisineLabel = (id) => (CUISINE_OPTIONS.find((c) => c.id === id) || {}).label || id;
+
+    const cardsHtml = strip.map((f) => `
+      <div class="slot-card">
+        <span class="em">${f.emoji}</span>
+        <span class="info">
+          <span class="nm">${f.name}</span>
+          <span class="meta">${cuisineLabel(f.cuisine)} • ${Recommender.rupiah(f.estPrice)}</span>
+        </span>
+      </div>
+    `).join("");
+
+    const html = `
+      <div class="modal-backdrop" data-close>
+        <div class="modal" onclick="event.stopPropagation()">
+          <div class="modal-handle"></div>
+          <button class="modal-close" data-close>×</button>
+          <div class="slot-stage">
+            <div class="slot-title">🎰 Spin Wheel</div>
+            <div class="slot-sub" id="slot-sub">Tarik tuasnya. Stop di mana, di situlah kamu makan.</div>
+            <div class="slot-machine">
+              <div class="slot-window" aria-hidden="true">
+                <div class="slot-strip" id="slot-strip" style="transform: translateY(0px);">
+                  ${cardsHtml}
+                </div>
+                <div class="slot-frame top"></div>
+                <div class="slot-frame bottom"></div>
+                <div class="slot-marker"></div>
+              </div>
+            </div>
+            <div class="slot-actions">
+              <button class="btn-reroll" id="btn-slot-spin">⬇ Tarik Tuas</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    this.showModal(html, (root) => {
+      const stripEl = root.querySelector("#slot-strip");
+      const subEl = root.querySelector("#slot-sub");
+      const btn = root.querySelector("#btn-slot-spin");
+      let spinning = false;
+
+      btn.onclick = () => {
+        if (spinning) return;
+        spinning = true;
+
+        // Calculate target offset: window shows 1 card at a time, marker at center.
+        // Strip starts at translateY(0). Card at index `WINNER_AT` should land at center.
+        // window height = CARD_H, so to center card i, translateY = -(i * CARD_H)
+        // Add small jitter so not pixel-perfect (but still inside winner card).
+        const jitter = (Math.random() - 0.5) * (CARD_H * 0.4);
+        const offset = -(WINNER_AT * CARD_H) + jitter;
+
+        requestAnimationFrame(() => {
+          stripEl.style.transform = `translateY(${offset}px)`;
+        });
+
+        btn.disabled = true;
+        btn.textContent = "⏳ Berputar...";
+        subEl.textContent = "Lagi mikir keras...";
+
+        setTimeout(() => {
+          subEl.innerHTML = `🎯 <strong>${winner.name}</strong>! Yuk pesan.`;
+        }, 3400);
+
+        setTimeout(() => this.openResult(winner, "slot"), 3700);
+      };
     });
   },
 
@@ -752,6 +894,9 @@ const App = {
             ` : fromMode === "roulette" ? `
               <button class="btn-reroll" id="btn-respin">🎡 Spin Lagi</button>
               <button class="btn-reroll ghost" id="btn-finish">✓ Oke, ini aja</button>
+            ` : fromMode === "slot" ? `
+              <button class="btn-reroll" id="btn-reslot">🎰 Tarik Lagi</button>
+              <button class="btn-reroll ghost" id="btn-finish">✓ Oke, ini aja</button>
             ` : `
               <button class="btn-reroll ghost" id="btn-finish">Tutup</button>
             `}
@@ -771,6 +916,9 @@ const App = {
       });
       root.querySelector("#btn-respin")?.addEventListener("click", () => {
         this.startRoulette();
+      });
+      root.querySelector("#btn-reslot")?.addEventListener("click", () => {
+        this.startSlot();
       });
       root.querySelector("#btn-finish")?.addEventListener("click", () => {
         this.closeModal();
