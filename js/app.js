@@ -75,7 +75,7 @@ const App = {
     document.getElementById("btn-personal").onclick = () => this.startOnboarding();
   },
 
-  // Quick start — pakai default profile, langsung ke main
+  // Quick start — pakai default profile + langsung mainin random game
   startQuick() {
     this.state.profile = {
       name: "Kamu",
@@ -90,8 +90,20 @@ const App = {
     };
     this.state.mode = "free-for-all";
     this.saveProfile();
+
+    // Render main dulu biar di belakang modal udah ada UI
     this.renderMain();
-    this.toast("Yuk roll dadu! 🎲");
+
+    // Pilih random game: Dadu / Roulette / Slot
+    const games = [
+      { id: "dice",     label: "🎲 Roll Dadu",     fn: () => this.startDice() },
+      { id: "roulette", label: "🎡 Roulette",      fn: () => this.startRoulette() },
+      { id: "slot",     label: "🎰 Spin Wheel",    fn: () => this.startSlot() }
+    ];
+    const pick = games[Math.floor(Math.random() * games.length)];
+
+    this.toast(`Terserah → ${pick.label}!`);
+    setTimeout(() => pick.fn(), 280);
   },
 
   // ============ STORAGE ============
