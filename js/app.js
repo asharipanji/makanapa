@@ -34,12 +34,33 @@ const App = {
     root.innerHTML = `
       <section class="landing" aria-labelledby="landing-title">
         <div class="landing-hero">
-          <div class="landing-emoji" aria-hidden="true">🍴</div>
+          <svg class="landing-fork" viewBox="0 0 192 192" fill="none" aria-hidden="true">
+            <g stroke="#D97757" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M58 38 C58 52, 60 68, 57 84"/>
+              <path d="M81 36 C82 52, 81 70, 79 86"/>
+              <path d="M105 36 C106 52, 105 68, 104 84"/>
+              <path d="M129 38 C130 52, 130 68, 128 84"/>
+              <path d="M52 84 C70 90, 110 92, 134 83"/>
+              <path d="M88 88 C92 112, 96 132, 92 160"/>
+            </g>
+            <g stroke="#1F1F1E" stroke-width="4" stroke-linecap="round">
+              <line x1="148" y1="44" x2="148" y2="62"/>
+              <line x1="139" y1="53" x2="157" y2="53"/>
+              <line x1="142" y1="47" x2="154" y2="59"/>
+              <line x1="154" y1="47" x2="142" y2="59"/>
+            </g>
+            <circle cx="40" cy="148" r="3.5" fill="#826E58"/>
+            <circle cx="158" cy="135" r="2.5" fill="#93A380"/>
+          </svg>
           <h1 id="landing-title" class="landing-title">MakanApa</h1>
           <p class="landing-tagline">Pertanyaan Terbesar Umat Manusia.</p>
           <p class="landing-sub">
             Bingung mau makan apa? Pilih cara mulai di bawah.
           </p>
+          <svg class="doodle-divider-svg" viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M2 6 Q15 1, 28 6 T54 6 T80 6 T106 6 T132 6 T158 6 T184 6 T198 6"
+                  stroke="#D97757" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          </svg>
         </div>
 
         <div class="landing-cta" role="group" aria-label="Pilih cara mulai">
@@ -544,7 +565,19 @@ const App = {
       <header class="app-header">
         <div class="row">
           <div>
-            <h1>🍴 MakanApa</h1>
+            <h1>
+              <svg class="logo-icon" viewBox="0 0 192 192" fill="none" aria-hidden="true">
+                <g stroke="#D97757" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M58 38 C58 52, 60 68, 57 84"/>
+                  <path d="M81 36 C82 52, 81 70, 79 86"/>
+                  <path d="M105 36 C106 52, 105 68, 104 84"/>
+                  <path d="M129 38 C130 52, 130 68, 128 84"/>
+                  <path d="M52 84 C70 90, 110 92, 134 83"/>
+                  <path d="M88 88 C92 112, 96 132, 92 160"/>
+                </g>
+              </svg>
+              MakanApa
+            </h1>
             <div class="tagline">Pertanyaan Terbesar Umat Manusia.</div>
           </div>
           <button id="btn-profile" class="btn-profile">
