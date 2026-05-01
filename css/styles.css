@@ -615,7 +615,111 @@ input { font: inherit; }
   gap: 8px;
 }
 
-/* ============ SLOT MACHINE / SPIN WHEEL ============ */
+/* ============ TERSERAH PICKER (random game chooser) ============ */
+.terserah-stage {
+  background: linear-gradient(135deg, #F97316 0%, #EC4899 50%, #8B5CF6 100%);
+  padding: 36px 20px 30px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.terserah-stage::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(circle, rgba(255,255,255,.18) 0%, transparent 60%);
+  animation: terserah-glow 2s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes terserah-glow {
+  0%, 100% { opacity: .4; transform: scale(1); }
+  50%      { opacity: .8; transform: scale(1.15); }
+}
+.terserah-title {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  position: relative;
+  z-index: 1;
+}
+.terserah-sub {
+  font-size: 13px;
+  opacity: .92;
+  margin-top: 4px;
+  min-height: 20px;
+  position: relative;
+  z-index: 1;
+}
+.terserah-sub strong { font-weight: 800; }
+.terserah-emoji {
+  font-size: 84px;
+  line-height: 1;
+  margin: 22px 0 6px;
+  display: inline-block;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,.3));
+  position: relative;
+  z-index: 1;
+}
+.terserah-emoji.shaking {
+  animation: terserah-shake 0.16s linear infinite;
+}
+.terserah-emoji.settled {
+  animation: terserah-pop 0.45s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes terserah-shake {
+  0%   { transform: translateY(0)   rotate(-6deg); }
+  25%  { transform: translateY(-4px) rotate(0); }
+  50%  { transform: translateY(-2px) rotate(6deg); }
+  75%  { transform: translateY(-4px) rotate(0); }
+  100% { transform: translateY(0)   rotate(-6deg); }
+}
+@keyframes terserah-pop {
+  0%   { transform: scale(0.85); }
+  50%  { transform: scale(1.18); }
+  100% { transform: scale(1); }
+}
+.terserah-label {
+  font-size: 26px;
+  font-weight: 800;
+  margin-top: 4px;
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 1;
+}
+.terserah-dots {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+}
+.terserah-dots .dot {
+  font-size: 22px;
+  width: 44px; height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,.18);
+  border-radius: 50%;
+  transition: transform .15s, background .15s;
+  filter: grayscale(.6);
+  opacity: 0.7;
+}
+.terserah-dots .dot.active {
+  background: rgba(255,255,255,.42);
+  transform: scale(1.18);
+  filter: grayscale(0);
+  opacity: 1;
+  box-shadow: 0 0 0 3px rgba(255,255,255,.4);
+}
+@media (prefers-reduced-motion: reduce) {
+  .terserah-stage::before { animation: none; }
+  .terserah-emoji.shaking { animation: none; }
+}
+
+/* ============ SLOT MACHINE / JACKPOT ============ */
 .slot-stage {
   background: linear-gradient(135deg, #ECFDF5, #CCFBF1, #BAE6FD);
   padding: 24px 16px 20px;

@@ -11,6 +11,8 @@ const App = {
     rouletteOptions: [],
     rolledFood: null,
     excludedIds: [],         // food yg sudah di-roll, biar reroll dapet beda
+    terserahQueue: [],       // queue shuffled game IDs untuk Terserah
+    lastTerserahGame: null,  // tracker anti-repeat antar cycle
   },
 
   // ============ INIT ============
@@ -96,16 +98,113 @@ const App = {
     this.playRandomGame();
   },
 
-  // Play random game (dipakai dari Terserah landing & main screen)
-  playRandomGame() {
-    const games = [
-      { id: "dice",     label: "🎲 Roll Dadu",   fn: () => this.startDice() },
-      { id: "roulette", label: "🎡 Roulette",    fn: () => this.startRoulette() },
-      { id: "slot",     label: "🎰 Spin Wheel",  fn: () => this.startSlot() }
+  // Definisi 3 game yang dipakai Terserah
+  terserahGames() {
+    return [
+      { id: "dice",     emoji: "🎲", label: "Roll Dadu",   fn: () => this.startDice() },
+      { id: "roulette", emoji: "🎡", label: "Spin Wheels", fn: () => this.startRoulette() },
+      { id: "slot",     emoji: "🎰", label: "Jackpot",     fn: () => this.startSlot() }
     ];
-    const pick = games[Math.floor(Math.random() * games.length)];
-    this.toast(`Terserah → ${pick.label}!`);
-    setTimeout(() => pick.fn(), 280);
+  },
+
+  // Play random game pakai shuffle-queue: tiap 3x klik pasti kena 3 game beda,
+  // dan boundary antar cycle anti-repeat.
+  playRandomGame() {
+    const all = this.terserahGames();
+
+    // Refill queue kalau kosong
+    if (!this.state.terserahQueue || this.state.terserahQueue.length === 0) {
+      let queue = all.map((g) => g.id).sort(() => Math.random() - 0.5);
+      // Hindari pengulangan di boundary (game terakhir yg dimainkan != game pertama queue baru)
+      if (queue[0] === this.state.lastTerserahGame && queue.length > 1) {
+        const tmp = queue[0]; queue[0] = queue[1]; queue[1] = tmp;
+      }
+      this.state.terserahQueue = queue;
+    }
+
+    const pickedId = this.state.terserahQueue.shift();
+    this.state.lastTerserahGame = pickedId;
+    const winner = all.find((g) => g.id === pickedId);
+
+    this.renderTerserahPicker(winner);
+  },
+
+  // Modal animasi cycling 3 game emoji, settle di winner, baru jalankan game-nya
+  renderTerserahPicker(winner) {
+    const all = this.terserahGames();
+    const html = `
+      <div class="modal-backdrop" data-close>
+        <div class="modal" onclick="event.stopPropagation()">
+          <button class="modal-close" data-close>×</button>
+          <div class="terserah-stage">
+            <div class="terserah-title">🎰 Mode Terserah</div>
+            <div class="terserah-sub" id="t-sub">Lagi diundi dari 3 game…</div>
+            <div class="terserah-emoji shaking" id="t-emoji">🎲</div>
+            <div class="terserah-label" id="t-label">Roll Dadu</div>
+            <div class="terserah-dots">
+              <span class="dot" id="dot-dice">🎲</span>
+              <span class="dot" id="dot-roulette">🎡</span>
+              <span class="dot" id="dot-slot">🎰</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    this.showModal(html, (root) => {
+      const emEl = root.querySelector("#t-emoji");
+      const labEl = root.querySelector("#t-label");
+      const subEl = root.querySelector("#t-sub");
+      const dots = {
+        dice: root.querySelector("#dot-dice"),
+        roulette: root.querySelector("#dot-roulette"),
+        slot: root.querySelector("#dot-slot"),
+      };
+
+      // Cycle cepat dulu (1.2s @ 85ms = ~14 cycle)
+      let i = 0;
+      const fastInterval = setInterval(() => {
+        i = (i + 1) % all.length;
+        emEl.textContent = all[i].emoji;
+        labEl.textContent = all[i].label;
+        Object.values(dots).forEach((d) => d.classList.remove("active"));
+        dots[all[i].id].classList.add("active");
+      }, 85);
+
+      // Setelah 1.2s, slow down dan settle ke winner
+      setTimeout(() => {
+        clearInterval(fastInterval);
+
+        // Slow phase: 4 tick deceleration, ending on winner
+        const winnerIdx = all.findIndex((g) => g.id === winner.id);
+        const ticks = [
+          { idx: (winnerIdx + 2) % all.length, gap: 130 },
+          { idx: (winnerIdx + 1) % all.length, gap: 200 },
+          { idx: (winnerIdx + 2) % all.length, gap: 280 },
+          { idx: winnerIdx,                    gap: 380 }
+        ];
+
+        let elapsed = 0;
+        ticks.forEach((t, k) => {
+          elapsed += t.gap;
+          setTimeout(() => {
+            const g = all[t.idx];
+            emEl.textContent = g.emoji;
+            labEl.textContent = g.label;
+            Object.values(dots).forEach((d) => d.classList.remove("active"));
+            dots[g.id].classList.add("active");
+            if (k === ticks.length - 1) {
+              emEl.classList.remove("shaking");
+              emEl.classList.add("settled");
+              subEl.innerHTML = `Yap, kamu kebagian <strong>${winner.label}</strong>!`;
+            }
+          }, elapsed);
+        });
+
+        // Trigger game 700ms setelah tick terakhir
+        setTimeout(() => winner.fn(), elapsed + 700);
+      }, 1200);
+    });
   },
 
   // ============ STORAGE ============
@@ -432,12 +531,12 @@ const App = {
           </button>
           <button class="cta-card roulette" id="btn-roulette">
             <span class="em">🎡</span>
-            <span class="label">Roulette</span>
+            <span class="label">Spin Wheels</span>
             <span class="desc">8 pilihan, putar mendarat</span>
           </button>
           <button class="cta-card slot" id="btn-slot">
             <span class="em">🎰</span>
-            <span class="label">Spin Wheel</span>
+            <span class="label">Jackpot</span>
             <span class="desc">Slot scroll cepat</span>
           </button>
         </div>
@@ -682,7 +781,7 @@ const App = {
           <div class="modal-handle"></div>
           <button class="modal-close" data-close>×</button>
           <div class="roulette-stage">
-            <div class="roulette-title">🎡 Spin the Wheel</div>
+            <div class="roulette-title">🎡 Spin Wheels</div>
             <div class="roulette-sub" id="roulette-sub">${N} pilihan siap diputar</div>
             <div class="wheel-wrap">
               <div class="wheel-pointer" aria-hidden="true"></div>
@@ -810,7 +909,7 @@ const App = {
           <div class="modal-handle"></div>
           <button class="modal-close" data-close>×</button>
           <div class="slot-stage">
-            <div class="slot-title">🎰 Spin Wheel</div>
+            <div class="slot-title">🎰 Jackpot</div>
             <div class="slot-sub" id="slot-sub">Tarik tuasnya. Stop di mana, di situlah kamu makan.</div>
             <div class="slot-machine">
               <div class="slot-window" aria-hidden="true">
@@ -954,10 +1053,10 @@ const App = {
               <button class="btn-reroll" id="btn-reroll">🎲 Roll Lagi (gak cocok)</button>
               <button class="btn-reroll ghost" id="btn-finish">✓ Oke, ini aja</button>
             ` : fromMode === "roulette" ? `
-              <button class="btn-reroll" id="btn-respin">🎡 Spin Lagi</button>
+              <button class="btn-reroll" id="btn-respin">🎡 Spin Wheels Lagi</button>
               <button class="btn-reroll ghost" id="btn-finish">✓ Oke, ini aja</button>
             ` : fromMode === "slot" ? `
-              <button class="btn-reroll" id="btn-reslot">🎰 Tarik Lagi</button>
+              <button class="btn-reroll" id="btn-reslot">🎰 Tarik Tuas Lagi</button>
               <button class="btn-reroll ghost" id="btn-finish">✓ Oke, ini aja</button>
             ` : `
               <button class="btn-reroll ghost" id="btn-finish">Tutup</button>

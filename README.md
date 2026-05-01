@@ -2,7 +2,7 @@
 
 > Pertanyaan Terbesar Umat Manusia: **makan apa ya?**
 
-Web app vanilla (HTML/CSS/JS, **tanpa build step**) yang bantu kamu jawab pertanyaan itu lewat **dadu**, **roulette**, atau **spin wheel slot**, disesuaikan dengan profil & mode (Ahli Gizi / Nutritionist / Free-for-All).
+Web app vanilla (HTML/CSS/JS, **tanpa build step**) yang bantu kamu jawab pertanyaan itu lewat **Roll Dadu**, **Spin Wheels**, **Jackpot**, atau mode **Terserah** (random salah satu dari 3 game). Disesuaikan dengan profil & mode (Ahli Gizi / Nutritionist / Free-for-All).
 
 ---
 
@@ -76,7 +76,7 @@ Mode bisa diganti kapan saja di mode-switcher di main screen.
 - Tombol **"Oke, ini aja"** untuk tutup dengan vibes positif
 
 ### Roulette 🎡
-- Klik **"Spin Roulette"** → 8 makanan eligible diatur dalam wheel SVG (8 segment warna-warni)
+- Klik **"Spin Wheels"** → 8 makanan eligible diatur dalam wheel SVG (8 segment warna-warni)
 - Klik **"Spin Sekarang"** → wheel berputar 6 putaran penuh dengan cubic-bezier easing → mendarat di pilihan
 - Pemenang sudah dipilih dulu via weighted picker, lalu rotation dihitung supaya pointer tepat di segmen pemenang
 - Tombol **"Spin Lagi"** untuk re-spin dengan 8 opsi baru
