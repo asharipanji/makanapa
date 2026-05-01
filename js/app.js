@@ -93,15 +93,17 @@ const App = {
 
     // Render main dulu biar di belakang modal udah ada UI
     this.renderMain();
+    this.playRandomGame();
+  },
 
-    // Pilih random game: Dadu / Roulette / Slot
+  // Play random game (dipakai dari Terserah landing & main screen)
+  playRandomGame() {
     const games = [
-      { id: "dice",     label: "🎲 Roll Dadu",     fn: () => this.startDice() },
-      { id: "roulette", label: "🎡 Roulette",      fn: () => this.startRoulette() },
-      { id: "slot",     label: "🎰 Spin Wheel",    fn: () => this.startSlot() }
+      { id: "dice",     label: "🎲 Roll Dadu",   fn: () => this.startDice() },
+      { id: "roulette", label: "🎡 Roulette",    fn: () => this.startRoulette() },
+      { id: "slot",     label: "🎰 Spin Wheel",  fn: () => this.startSlot() }
     ];
     const pick = games[Math.floor(Math.random() * games.length)];
-
     this.toast(`Terserah → ${pick.label}!`);
     setTimeout(() => pick.fn(), 280);
   },
@@ -440,9 +442,18 @@ const App = {
           </button>
         </div>
 
+        <button class="cta-wide terserah" id="btn-terserah" type="button">
+          <span class="em">🎰</span>
+          <span class="info">
+            <span class="label">Terserah!</span>
+            <span class="desc">Random pilih salah satu game di atas — anti mikir total.</span>
+          </span>
+          <span class="arrow">→</span>
+        </button>
+
         ${trending.length > 0 ? `
           <div class="section-title">🔥 Lagi Hype di ${areaLabel}</div>
-          <div class="trending-grid" id="trending-list">
+          <div class="trending-grid">
             ${trending.map((f) => `
               <button class="trend-card" data-food="${f.id}">
                 <span class="em">${f.emoji}</span>
@@ -454,6 +465,44 @@ const App = {
             `).join("")}
           </div>
         ` : ""}
+
+        ${(() => {
+          const viral = Recommender.byTag("viral", 6, p, this.state.mode);
+          if (!viral.length) return "";
+          return `
+            <div class="section-title">🌟 Lagi Viral / FYP</div>
+            <div class="trending-grid">
+              ${viral.map((f) => `
+                <button class="trend-card viral" data-food="${f.id}">
+                  <span class="em">${f.emoji}</span>
+                  <span class="info">
+                    <span class="name">${f.name}</span>
+                    <span class="meta">${Recommender.rupiah(f.estPrice)} • <span class="tag-viral">viral</span></span>
+                  </span>
+                </button>
+              `).join("")}
+            </div>
+          `;
+        })()}
+
+        ${(() => {
+          const gems = Recommender.byTag("hidden-gem", 6, p, this.state.mode);
+          if (!gems.length) return "";
+          return `
+            <div class="section-title">💎 Hidden Gems Bandung</div>
+            <div class="trending-grid">
+              ${gems.map((f) => `
+                <button class="trend-card gem" data-food="${f.id}">
+                  <span class="em">${f.emoji}</span>
+                  <span class="info">
+                    <span class="name">${f.name}</span>
+                    <span class="meta">${Recommender.rupiah(f.estPrice)} • <span class="tag-gem">hidden gem</span></span>
+                  </span>
+                </button>
+              `).join("")}
+            </div>
+          `;
+        })()}
       </main>
 
       <footer class="app-footer">
@@ -472,6 +521,7 @@ const App = {
     document.getElementById("btn-dice").onclick = () => this.startDice();
     document.getElementById("btn-roulette").onclick = () => this.startRoulette();
     document.getElementById("btn-slot").onclick = () => this.startSlot();
+    document.getElementById("btn-terserah").onclick = () => this.playRandomGame();
     document.querySelectorAll("[data-food]").forEach((b) => {
       b.onclick = () => {
         const food = FOODS.find((f) => f.id === b.dataset.food);

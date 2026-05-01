@@ -288,6 +288,81 @@ input { font: inherit; }
   border-color: #99F6E4;
 }
 
+/* Wide "Terserah!" button */
+.cta-wide {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: var(--r-lg);
+  margin-bottom: 24px;
+  cursor: pointer;
+  text-align: left;
+  box-shadow: var(--shadow);
+  transition: transform .12s ease, filter .15s ease;
+  color: #fff;
+  background: linear-gradient(135deg, #F97316 0%, #EC4899 50%, #8B5CF6 100%);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+.cta-wide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.2) 50%, transparent 70%);
+  transform: translateX(-100%);
+  animation: shine 3.5s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes shine {
+  0%, 70% { transform: translateX(-100%); }
+  100%    { transform: translateX(100%); }
+}
+.cta-wide:hover { filter: brightness(1.05); }
+.cta-wide:active { transform: scale(0.98); }
+.cta-wide .em {
+  font-size: 32px;
+  width: 52px; height: 52px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,.25);
+  border-radius: var(--r-md);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.cta-wide .info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: relative;
+  z-index: 1;
+}
+.cta-wide .info .label {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+.cta-wide .info .desc {
+  font-size: 12px;
+  opacity: 0.92;
+  line-height: 1.35;
+}
+.cta-wide .arrow {
+  font-size: 22px;
+  font-weight: 800;
+  flex-shrink: 0;
+  opacity: 0.85;
+  position: relative;
+  z-index: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cta-wide::before { animation: none; }
+}
+
 /* Section */
 .section-title {
   font-size: 12px; font-weight: 800; text-transform: uppercase;
@@ -335,6 +410,12 @@ input { font: inherit; }
   margin-top: 2px;
 }
 .trend-fire { color: #EF4444; font-weight: 700; }
+.tag-viral { color: #EC4899; font-weight: 700; }
+.tag-gem { color: #8B5CF6; font-weight: 700; }
+.trend-card.viral { border-color: #FBCFE8; }
+.trend-card.viral:hover { background: #FDF2F8; }
+.trend-card.gem { border-color: #DDD6FE; }
+.trend-card.gem:hover { background: #FAF5FF; }
 
 /* ============ MODAL ============ */
 .modal-backdrop {
