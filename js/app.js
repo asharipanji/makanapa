@@ -229,6 +229,45 @@ const App = {
     this.state.profile = null;
   },
 
+  // ============ TENANT STORAGE ============
+  loadTenants() {
+    try { return JSON.parse(localStorage.getItem("makanapa_tenants") || "[]"); }
+    catch { return []; }
+  },
+  saveTenants(list) {
+    try { localStorage.setItem("makanapa_tenants", JSON.stringify(list)); }
+    catch {}
+  },
+  // Pool gabungan FOODS + tenant (dipakai recommender)
+  allFoods() {
+    return [...FOODS, ...this.loadTenants()];
+  },
+  priceTierFromPrice(price) {
+    if (price < 30000) return "low";
+    if (price <= 75000) return "medium";
+    return "high";
+  },
+
+  // ============ CONFETTI ============
+  spawnConfetti(count = 90) {
+    const colors = ["#F97316","#EC4899","#8B5CF6","#14B8A6","#FBBF24","#10B981","#0EA5E9","#EF4444","#F59E0B"];
+    const root = document.body;
+    for (let i = 0; i < count; i++) {
+      const c = document.createElement("div");
+      c.className = "confetti-piece";
+      if (Math.random() > 0.55) c.classList.add("circle");
+      c.style.left = (Math.random() * 100) + "%";
+      c.style.background = colors[i % colors.length];
+      c.style.setProperty("--drift-x", ((Math.random() - 0.5) * 240) + "px");
+      c.style.animationDelay = (Math.random() * 0.6) + "s";
+      c.style.animationDuration = (2.4 + Math.random() * 2.6) + "s";
+      root.appendChild(c);
+    }
+    setTimeout(() => {
+      document.querySelectorAll(".confetti-piece").forEach((p) => p.remove());
+    }, 6500);
+  },
+
   // ============================================================
   // ONBOARDING
   // ============================================================
@@ -488,7 +527,7 @@ const App = {
     const root = document.getElementById("app");
     const p = this.state.profile;
     const mode = MODES[this.state.mode];
-    const eligible = Recommender.filter(p, this.state.mode);
+    const eligible = Recommender.filter(p, this.state.mode, this.allFoods());
 
     const trending = Recommender.trendingForArea(p.area, 6);
 
@@ -608,14 +647,30 @@ const App = {
           `;
         })()}
 
+        <section class="tenant-cta" aria-label="Daftar tenant">
+          <div class="tenant-cta-glow"></div>
+          <div class="tenant-cta-inner">
+            <div class="tenant-cta-icon" aria-hidden="true">🏪</div>
+            <div class="tenant-cta-info">
+              <div class="tenant-cta-tag">PARTNER PROGRAM</div>
+              <div class="tenant-cta-title">Punya warung / brand kuliner?</div>
+              <div class="tenant-cta-desc">
+                Daftar jadi <strong>tenant MakanApa</strong>. Menumu masuk picker — tiap kepilih, user dapat efek <strong>🎰 JACKPOT + confetti</strong>. Premium spotlight buat brand kamu.
+              </div>
+              <button class="tenant-cta-btn" id="btn-tenant" type="button">
+                🚀 Daftar Tenant Sekarang
+              </button>
+            </div>
+          </div>
+        </section>
+
         <section class="ads-slot" aria-label="Slot iklan">
           <div class="ads-slot-inner">
             <div class="ads-icon" aria-hidden="true">📢</div>
             <div class="ads-info">
-              <div class="ads-title">Slot Iklan Tersedia</div>
+              <div class="ads-title">Slot Iklan Banner</div>
               <div class="ads-desc">
-                Promosikan resto, brand kuliner, atau produk kamu ke foodies Bandung.
-                Reach audience yang lapar &amp; siap order.
+                Selain tenant program, kami juga buka slot banner iklan untuk produk non-kuliner.
               </div>
               <a href="mailto:ads@makanapa.lol?subject=Iklan%20MakanApa" class="ads-cta">
                 📧 ads@makanapa.lol
@@ -652,12 +707,227 @@ const App = {
     document.getElementById("btn-roulette").onclick = () => this.startRoulette();
     document.getElementById("btn-slot").onclick = () => this.startSlot();
     document.getElementById("btn-terserah").onclick = () => this.playRandomGame();
+    document.getElementById("btn-tenant")?.addEventListener("click", () => this.openTenantForm());
     document.querySelectorAll("[data-food]").forEach((b) => {
       b.onclick = () => {
         const food = FOODS.find((f) => f.id === b.dataset.food);
         if (food) this.openResult(food);
       };
     });
+  },
+
+  // ============================================================
+  // PROFILE MENU
+  // ============================================================
+  // ============================================================
+  // TENANT REGISTRATION FORM
+  // ============================================================
+  openTenantForm() {
+    const FOOD_EMOJIS = [
+      "🍕","🍔","🍜","🍱","🍛","🍲","🥘","🍝","🥗","🍣",
+      "🍢","🍤","🥟","🍙","🥪","🌮","🌯","🍳","🥩","🍗",
+      "🥬","🍿","🧁","🍰","🍩","🍫","🍪","🥐","🥯","🥞",
+      "🍦","🍨","🍓","🥑","🥥","🧋","🥤","☕","🍵","🍹"
+    ];
+
+    const cuisineOpts = CUISINE_OPTIONS
+      .filter((c) => c.id !== "trending" && c.id !== "fyp")
+      .map((c) => `<option value="${c.id}">${c.emoji} ${c.label}</option>`).join("");
+
+    const areaOpts = BANDUNG_AREAS
+      .map((a) => `<option value="${a.id}">${a.label}</option>`).join("");
+
+    const html = `
+      <div class="modal-backdrop" data-close>
+        <div class="modal" onclick="event.stopPropagation()">
+          <div class="modal-handle"></div>
+          <button class="modal-close" data-close>×</button>
+          <div class="tenant-hero">
+            <div class="em">🏪</div>
+            <h2>Daftar Tenant MakanApa</h2>
+            <p>Resto, UMKM, brand kuliner — daftarin menu andalan. Tiap kepilih = JACKPOT + confetti buat user.</p>
+          </div>
+          <div class="modal-body">
+            <form id="tenant-form" class="tenant-form" novalidate>
+              <div class="form-row">
+                <label>
+                  <span class="lab">Nama Resto / Bisnis <em>*</em></span>
+                  <input type="text" name="businessName" required maxlength="60" placeholder="Warung Bu Tini">
+                </label>
+              </div>
+              <div class="form-row">
+                <label>
+                  <span class="lab">Nama Menu Andalan <em>*</em></span>
+                  <input type="text" name="foodName" required maxlength="50" placeholder="Nasi Goreng Mercon Spesial">
+                </label>
+              </div>
+              <div class="form-row">
+                <span class="lab">Pilih Emoji Menu</span>
+                <div class="emoji-picker" id="emoji-picker" role="radiogroup">
+                  ${FOOD_EMOJIS.map((e) => `<button type="button" class="emoji-opt" data-emoji="${e}" aria-label="emoji ${e}">${e}</button>`).join("")}
+                </div>
+                <input type="hidden" name="emoji" id="emoji-input" value="🍴">
+              </div>
+              <div class="form-row two">
+                <label>
+                  <span class="lab">Cuisine <em>*</em></span>
+                  <select name="cuisine" required>${cuisineOpts}</select>
+                </label>
+                <label>
+                  <span class="lab">Area <em>*</em></span>
+                  <select name="area" required>${areaOpts}</select>
+                </label>
+              </div>
+              <div class="form-row two">
+                <label>
+                  <span class="lab">Harga (Rp) <em>*</em></span>
+                  <input type="number" name="price" required min="5000" max="500000" step="1000" placeholder="35000">
+                </label>
+                <label>
+                  <span class="lab">Pedas Level</span>
+                  <select name="spice">
+                    <option value="0">🥛 Tidak pedas</option>
+                    <option value="1" selected>🌶 Sedikit</option>
+                    <option value="2">🌶🌶 Sedang</option>
+                    <option value="3">🌶🌶🌶 Pedas</option>
+                    <option value="4">🔥 Pedas banget</option>
+                    <option value="5">💀 Apocalypse</option>
+                  </select>
+                </label>
+              </div>
+              <div class="form-row">
+                <span class="lab">Diet (boleh skip)</span>
+                <div class="chips">
+                  <label class="chip-check"><input type="checkbox" name="diet" value="halal" checked>🕌 Halal</label>
+                  <label class="chip-check"><input type="checkbox" name="diet" value="vegetarian">🥗 Vegetarian</label>
+                  <label class="chip-check"><input type="checkbox" name="diet" value="vegan">🌱 Vegan</label>
+                </div>
+              </div>
+              <div class="form-row">
+                <label>
+                  <span class="lab">Deskripsi singkat <em>*</em></span>
+                  <textarea name="description" required maxlength="200" rows="3" placeholder="Apa yang bikin menu ini spesial? (max 200 huruf)"></textarea>
+                </label>
+              </div>
+              <div class="form-row two">
+                <label>
+                  <span class="lab">WhatsApp / Telp <em>*</em></span>
+                  <input type="tel" name="contact" required placeholder="0812xxxxxxx">
+                </label>
+                <label>
+                  <span class="lab">Email <em>*</em></span>
+                  <input type="email" name="email" required placeholder="resto@email.com">
+                </label>
+              </div>
+              <div class="form-row">
+                <label>
+                  <span class="lab">Alamat Resto <em>*</em></span>
+                  <input type="text" name="address" required placeholder="Jl. Dago No. 123, Bandung">
+                </label>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn-tenant-submit">🚀 Daftar &amp; Lihat Preview JACKPOT</button>
+                <p class="form-note">
+                  Tim kami akan kontak via email dalam 1×24 jam. Pendaftaran ini juga akan dikirim ke
+                  <strong>partners@makanapa.lol</strong>.
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    `;
+
+    this.showModal(html, (root) => {
+      // Emoji picker
+      const emojiInput = root.querySelector("#emoji-input");
+      const emojiBtns = root.querySelectorAll("[data-emoji]");
+      emojiBtns.forEach((b) => {
+        b.onclick = () => {
+          emojiInput.value = b.dataset.emoji;
+          emojiBtns.forEach((o) => o.classList.remove("active"));
+          b.classList.add("active");
+        };
+      });
+
+      // Form submit
+      const form = root.querySelector("#tenant-form");
+      form.onsubmit = (e) => {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+        this.submitTenantForm(form);
+      };
+    });
+  },
+
+  submitTenantForm(form) {
+    const fd = new FormData(form);
+    const price = parseInt(fd.get("price"), 10) || 0;
+    const dietList = fd.getAll("diet");
+    const area = fd.get("area");
+
+    const tenant = {
+      id: "tenant-" + Date.now(),
+      name: (fd.get("foodName") || "").trim(),
+      emoji: fd.get("emoji") || "🍴",
+      cuisine: fd.get("cuisine"),
+      type: "food",
+      tags: ["sponsored"],
+      vibes: ["comfort", "indulgent"],
+      diet: dietList.length ? dietList : [],
+      allergies: [],
+      spice: parseInt(fd.get("spice"), 10) || 1,
+      priceTier: this.priceTierFromPrice(price),
+      estPrice: price,
+      healthScore: 5,
+      macros: null,
+      description: (fd.get("description") || "").trim(),
+      isTrending: false,
+      trendingAreas: area ? [area] : [],
+      isTenant: true,
+      business: {
+        name: (fd.get("businessName") || "").trim(),
+        contact: (fd.get("contact") || "").trim(),
+        email: (fd.get("email") || "").trim(),
+        address: (fd.get("address") || "").trim(),
+        area: area
+      },
+      submittedAt: new Date().toISOString()
+    };
+
+    // Save to localStorage
+    const tenants = this.loadTenants();
+    tenants.push(tenant);
+    this.saveTenants(tenants);
+
+    // Trigger mailto handoff (background)
+    try {
+      const subject = encodeURIComponent(`[Tenant] ${tenant.business.name} — ${tenant.name}`);
+      const bodyData = `Halo tim MakanApa,
+
+Saya ingin daftar sebagai tenant dengan detail berikut:
+
+Bisnis: ${tenant.business.name}
+Menu: ${tenant.name}
+Cuisine: ${tenant.cuisine}
+Area: ${tenant.business.area}
+Harga: Rp ${tenant.estPrice.toLocaleString("id-ID")}
+Deskripsi: ${tenant.description}
+
+Kontak: ${tenant.business.contact}
+Email: ${tenant.business.email}
+Alamat: ${tenant.business.address}
+
+Mohon untuk follow up. Terima kasih!`;
+      const mail = `mailto:partners@makanapa.lol?subject=${subject}&body=${encodeURIComponent(bodyData)}`;
+      // Buka mailto di tab baru (non-blocking; user bisa skip)
+      const w = window.open(mail, "_blank");
+      if (w) setTimeout(() => { try { w.close(); } catch {} }, 800);
+    } catch {}
+
+    // Close form & open preview dengan jackpot
+    this.closeModal();
+    setTimeout(() => this.openResult(tenant, "preview"), 250);
   },
 
   // ============================================================
@@ -717,7 +987,7 @@ const App = {
   // DICE
   // ============================================================
   startDice() {
-    const eligible = Recommender.filter(this.state.profile, this.state.mode);
+    const eligible = Recommender.filter(this.state.profile, this.state.mode, this.allFoods());
     if (eligible.length === 0) {
       this.openEmpty();
       return;
@@ -727,7 +997,7 @@ const App = {
   },
 
   rollDice() {
-    const eligible = Recommender.filter(this.state.profile, this.state.mode);
+    const eligible = Recommender.filter(this.state.profile, this.state.mode, this.allFoods());
     const food = Recommender.rerollExcluding(eligible, this.state.excludedIds, this.state.profile);
     if (!food) {
       this.openEmpty();
@@ -767,7 +1037,7 @@ const App = {
   // ROULETTE — fortune wheel (fixed animation)
   // ============================================================
   startRoulette() {
-    const eligible = Recommender.filter(this.state.profile, this.state.mode);
+    const eligible = Recommender.filter(this.state.profile, this.state.mode, this.allFoods());
     if (eligible.length === 0) {
       this.openEmpty();
       return;
@@ -893,7 +1163,7 @@ const App = {
   // SPIN WHEEL — slot machine style
   // ============================================================
   startSlot() {
-    const eligible = Recommender.filter(this.state.profile, this.state.mode);
+    const eligible = Recommender.filter(this.state.profile, this.state.mode, this.allFoods());
     if (eligible.length === 0) {
       this.openEmpty();
       return;
@@ -1002,21 +1272,42 @@ const App = {
     const m = MODES[this.state.mode];
     const badges = Recommender.matchExplain(food, p, this.state.mode);
     const cuisineLabel = (CUISINE_OPTIONS.find((c) => c.id === food.cuisine) || {}).label || food.cuisine;
-    const areaLabel = (BANDUNG_AREAS.find((a) => a.id === p.area) || {}).label || "Bandung";
+    const areaLabel = (BANDUNG_AREAS.find((a) => a.id === (p?.area)) || {}).label || "Bandung";
     const leads = Recommender.leads(food, areaLabel);
 
+    const isTenant = food.isTenant === true;
+    const isPreview = fromMode === "preview";
+    const businessName = food.business?.name || "";
+
     const html = `
-      <div class="modal-backdrop" data-close>
-        <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-backdrop ${isTenant ? 'tenant-mode' : ''}" data-close>
+        <div class="modal ${isTenant ? 'tenant-modal' : ''}" onclick="event.stopPropagation()">
           <button class="modal-close" data-close>×</button>
-          <div class="result-hero">
-            <span class="em">${food.emoji}</span>
+          ${isTenant ? `
+            <div class="jackpot-banner">
+              <span class="banner-em">🎰</span>
+              <div class="banner-text">
+                <strong>${isPreview ? 'PREVIEW JACKPOT' : 'JACKPOT WIN!'}</strong>
+                <span class="banner-sub">Tenant Spotlight • Sponsored Pick</span>
+              </div>
+              <span class="banner-em">🎉</span>
+            </div>
+          ` : ""}
+          <div class="result-hero ${isTenant ? 'tenant-hero' : ''}">
+            ${isTenant ? `<div class="sparkle s1">✨</div><div class="sparkle s2">⭐</div><div class="sparkle s3">💫</div>` : ""}
+            <span class="em ${isTenant ? 'mega' : ''}">${food.emoji}</span>
             <h2>${food.name}</h2>
+            ${isTenant && businessName ? `<div class="tenant-business">@ ${businessName}</div>` : ""}
             <div class="price">${Recommender.rupiah(food.estPrice)} • estimasi</div>
-            <span class="cuisine-pill">${cuisineLabel}</span>
+            <span class="cuisine-pill">${cuisineLabel}${isTenant ? ' • SPONSORED' : ''}</span>
           </div>
 
           <div class="modal-body">
+            ${isPreview ? `
+              <div class="preview-banner">
+                💡 <strong>Ini preview:</strong> beginilah menumu akan muncul saat user dapat di Roll/Spin/Jackpot. Confetti + JACKPOT banner = signature pengalaman tenant.
+              </div>
+            ` : ""}
             <div class="result-section">
               <p class="result-desc">${food.description}</p>
             </div>
@@ -1080,7 +1371,10 @@ const App = {
               </div>
             </div>
 
-            ${fromMode === "dice" ? `
+            ${fromMode === "preview" ? `
+              <button class="btn-reroll" id="btn-edit-tenant">📝 Edit Pendaftaran</button>
+              <button class="btn-reroll ghost" id="btn-finish-preview">✓ Selesai &amp; Submit</button>
+            ` : fromMode === "dice" ? `
               <button class="btn-reroll" id="btn-reroll">🎲 Roll Lagi (gak cocok)</button>
               <button class="btn-reroll ghost" id="btn-finish">✓ Oke, ini aja</button>
             ` : fromMode === "roulette" ? `
@@ -1098,6 +1392,28 @@ const App = {
     `;
 
     this.showModal(html, (root) => {
+      // Tenant jackpot: trigger confetti + buka leads otomatis
+      if (isTenant) {
+        this.spawnConfetti(100);
+        // Burst kedua setelah 600ms biar effect lebih lama
+        setTimeout(() => this.spawnConfetti(60), 600);
+      }
+      // Preview-specific buttons
+      root.querySelector("#btn-edit-tenant")?.addEventListener("click", () => {
+        // Hapus tenant terakhir (drafted yang baru saja disimpan), lalu buka form lagi
+        const tenants = this.loadTenants();
+        if (tenants.length && tenants[tenants.length - 1].id === food.id) {
+          tenants.pop();
+          this.saveTenants(tenants);
+        }
+        this.closeModal();
+        setTimeout(() => this.openTenantForm(), 200);
+      });
+      root.querySelector("#btn-finish-preview")?.addEventListener("click", () => {
+        this.closeModal();
+        this.toast("✅ Pendaftaran tenant tersimpan. Tim kami akan kontak segera!");
+      });
+      // Default lead/reroll handlers
       root.querySelectorAll("[data-lead]").forEach((a) => {
         a.addEventListener("click", () => {
           this.toast(`Membuka ${a.dataset.lead}…`);

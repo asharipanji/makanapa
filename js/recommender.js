@@ -97,6 +97,8 @@ const Recommender = {
     if (tags.includes("viral")) s += 2;
     if (tags.includes("fyp")) s += 1.5;
     if (tags.includes("hidden-gem")) s += 1;
+    // Tenant boost — sponsored content lebih sering muncul (tapi tetap kompetisi)
+    if (food.isTenant) s += 4;
     return s;
   },
 
