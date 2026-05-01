@@ -1,8 +1,8 @@
 # 🍴 MakanApa
 
-> Pertanyaan abadi terbesar manusia: **makan apa ya?**
+> Pertanyaan Terbesar Umat Manusia: **makan apa ya?**
 
-Prototype web app vanilla (HTML/CSS/JS, **tanpa build step**) yang bantu kamu jawab pertanyaan abadi itu lewat **dadu** atau **roulette**, disesuaikan dengan profil & mode (Ahli Gizi / Nutritionist / Free-for-All).
+Web app vanilla (HTML/CSS/JS, **tanpa build step**) yang bantu kamu jawab pertanyaan itu lewat **dadu**, **roulette**, atau **spin wheel slot**, disesuaikan dengan profil & mode (Ahli Gizi / Nutritionist / Free-for-All).
 
 ---
 

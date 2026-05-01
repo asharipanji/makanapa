@@ -34,7 +34,7 @@ const App = {
         <div class="landing-hero">
           <div class="landing-emoji" aria-hidden="true">🍴</div>
           <h1 id="landing-title" class="landing-title">MakanApa</h1>
-          <p class="landing-tagline">Pertanyaan abadi, jawaban anti-mikir.</p>
+          <p class="landing-tagline">Pertanyaan Terbesar Umat Manusia.</p>
           <p class="landing-sub">
             Bingung mau makan apa? Pilih cara mulai di bawah.
           </p>
@@ -388,7 +388,7 @@ const App = {
         <div class="row">
           <div>
             <h1>🍴 MakanApa</h1>
-            <div class="tagline">Pertanyaan abadi, jawaban anti-mikir.</div>
+            <div class="tagline">Pertanyaan Terbesar Umat Manusia.</div>
           </div>
           <button id="btn-profile" class="btn-profile">
             👤 ${p.name}
@@ -445,7 +445,7 @@ const App = {
       </main>
 
       <footer class="app-footer">
-        <strong>MakanApa</strong> • Prototype<br>
+        <strong>MakanApa</strong><br>
         Pemesanan dilakukan di platform eksternal. MakanApa hanya menyarankan.
       </footer>
 
