@@ -213,6 +213,11 @@ const App = {
       const raw = localStorage.getItem("makanapa_profile");
       if (raw) this.state.profile = JSON.parse(raw);
     } catch {}
+    // Migration: drop deprecated diet IDs (no-pork, no-beef)
+    if (this.state.profile?.diet) {
+      const validIds = new Set(DIET_OPTIONS.map((o) => o.id));
+      this.state.profile.diet = this.state.profile.diet.filter((d) => validIds.has(d));
+    }
   },
   saveProfile() {
     try {
@@ -602,11 +607,37 @@ const App = {
             </div>
           `;
         })()}
+
+        <section class="ads-slot" aria-label="Slot iklan">
+          <div class="ads-slot-inner">
+            <div class="ads-icon" aria-hidden="true">📢</div>
+            <div class="ads-info">
+              <div class="ads-title">Slot Iklan Tersedia</div>
+              <div class="ads-desc">
+                Promosikan resto, brand kuliner, atau produk kamu ke foodies Bandung.
+                Reach audience yang lapar &amp; siap order.
+              </div>
+              <a href="mailto:ads@makanapa.lol?subject=Iklan%20MakanApa" class="ads-cta">
+                📧 ads@makanapa.lol
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer class="app-footer">
+        <div class="visitor-counter">
+          <a href="https://hits.sh/makanapa.lol/" target="_blank" rel="noopener" aria-label="Total pengunjung MakanApa">
+            <img src="https://hits.sh/makanapa.lol.svg?view=total&color=F97316&label=Pengunjung&style=flat-square" alt="Total Pengunjung" loading="lazy">
+            <img src="https://hits.sh/makanapa.lol.svg?view=today&color=8B5CF6&label=Hari+ini&style=flat-square" alt="Pengunjung hari ini" loading="lazy">
+          </a>
+        </div>
         <strong>MakanApa</strong><br>
-        Pemesanan dilakukan di platform eksternal. MakanApa hanya menyarankan.
+        Pemesanan dilakukan di platform eksternal. MakanApa hanya menyarankan.<br>
+        <span class="footer-ads">
+          Mau pasang iklan?
+          <a href="mailto:ads@makanapa.lol?subject=Iklan%20MakanApa">ads@makanapa.lol</a>
+        </span>
       </footer>
 
       <div id="modal-root"></div>

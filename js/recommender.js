@@ -53,8 +53,9 @@ const Recommender = {
       case "vegetarian":  return fd.includes("vegetarian") || fd.includes("vegan");
       case "vegan":       return fd.includes("vegan");
       case "pescatarian": return fd.includes("pescatarian") || fd.includes("vegetarian") || fd.includes("vegan");
-      case "no-pork":     return fd.includes("halal") || fd.includes("vegetarian") || fd.includes("vegan") || fd.includes("pescatarian");
-      case "no-beef":     return !food.id.match(/beef|sapi|rendang|steak|burger|kwetiau|kebab|bibimbap|kbbq/i);
+      // Pork & Beef = positive preference (boost via scoreFood), bukan exclusion
+      case "pork":        return true;
+      case "beef":        return true;
       case "gluten-free": return !(food.allergies || []).includes("gluten");
       case "low-carb":    return (food.macros?.c ?? 0) <= 40;
       default: return true;
@@ -66,20 +67,33 @@ const Recommender = {
    */
   scoreFood(food, profile) {
     let s = 0;
+    const tags = food.tags || [];
+
     if (profile.cuisines?.length) {
+      // Cuisine real (indonesian/japanese/dst.)
       if (profile.cuisines.includes(food.cuisine)) s += 3;
+      // Pseudo-cuisine: "fyp" = boost makanan tag fyp+viral
+      if (profile.cuisines.includes("fyp") && (tags.includes("fyp") || tags.includes("viral"))) {
+        s += 3;
+      }
+      // Pseudo-cuisine: "trending" = boost makanan isTrending atau hype umum
+      if (profile.cuisines.includes("trending") && (food.isTrending || tags.includes("viral"))) {
+        s += 3;
+      }
     }
     if (profile.vibes?.length) {
       const overlap = (food.vibes || []).filter((v) => profile.vibes.includes(v)).length;
       s += overlap * 2;
     }
+    // Diet preferences (positive boost, bukan exclusion)
+    if (profile.diet?.includes("pork") && /pork|babi|bacon|ham/i.test(food.name)) s += 2;
+    if (profile.diet?.includes("beef") && /beef|sapi|rendang|steak|burger|kwetiau|kebab|bibimbap|yakiniku|smashed/i.test(food.name)) s += 2;
     // Lokasi: kalau makanan trending di area user, boost
     if (profile.area && (food.trendingAreas || []).includes(profile.area)) {
       s += 2;
     }
     if (food.isTrending) s += 1;
-    // Tag-based boost: viral & fyp lebih sering muncul, hidden-gem sedikit boost
-    const tags = food.tags || [];
+    // Tag-based boost
     if (tags.includes("viral")) s += 2;
     if (tags.includes("fyp")) s += 1.5;
     if (tags.includes("hidden-gem")) s += 1;

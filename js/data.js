@@ -8,8 +8,8 @@ const DIET_OPTIONS = [
   { id: "vegetarian",   label: "Vegetarian",   emoji: "🥗" },
   { id: "vegan",        label: "Vegan",        emoji: "🌱" },
   { id: "pescatarian",  label: "Pescatarian",  emoji: "🐟" },
-  { id: "no-pork",      label: "No Pork",      emoji: "🐷" },
-  { id: "no-beef",      label: "No Beef",      emoji: "🐄" },
+  { id: "pork",         label: "Pork",         emoji: "🐷" },
+  { id: "beef",         label: "Beef",         emoji: "🐄" },
   { id: "gluten-free",  label: "Gluten-free",  emoji: "🌾" },
   { id: "low-carb",     label: "Low-carb",     emoji: "🥑" }
 ];
@@ -24,6 +24,8 @@ const ALLERGY_OPTIONS = [
 ];
 
 const CUISINE_OPTIONS = [
+  { id: "trending",       label: "Trending",       emoji: "🔥" },
+  { id: "fyp",            label: "FYP / Viral",    emoji: "📱" },
   { id: "indonesian",     label: "Indonesia",      emoji: "🇮🇩" },
   { id: "sundanese",      label: "Sunda/Bandung",  emoji: "🌾" },
   { id: "japanese",       label: "Jepang",         emoji: "🇯🇵" },
