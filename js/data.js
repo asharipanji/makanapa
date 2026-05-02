@@ -1236,5 +1236,1050 @@ const FOODS = [
     priceTier: "low", estPrice: 38000, healthScore: 4, macros: null,
     description: "4.4★ (318 ulasan). Bakso bar-bar dengan menu durian + cendol — unik!",
     isTrending: false, trendingAreas: [], rating: 4.4, reviews: 318
-  }
+  },
+
+  // ============================================================
+  // 💎 MORE HIDDEN GEMS — diimport dari Semantics Research lists
+  // (Top Rated BDG + Kulineran BDG, ~317 tempat. 130 unik baru)
+  // ============================================================
+  {
+    id: "blue-doors", name: "Blue Doors", emoji: "☕",
+    cuisine: "cafe", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (2,696 ulasan). Hidden gem Bandung — kategori kedai kopi.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.7, reviews: 2696
+  },
+  {
+    id: "cafe-halaman", name: "Cafe Halaman", emoji: "🍳",
+    cuisine: "cafe", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 75000, healthScore: 5, macros: null,
+    description: "4.3★ (3,430 ulasan). Hidden gem Bandung — kategori kafe.",
+    isTrending: false, trendingAreas: [], rating: 4.3, reviews: 3430
+  },
+  {
+    id: "sajian-sunda-sambara", name: "Sajian Sunda Sambara", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 75000, healthScore: 5, macros: null,
+    description: "4.4★ (4,117 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.4, reviews: 4117
+  },
+  {
+    id: "ambrogio-patisserie", name: "Ambrogio Patisserie", emoji: "🥐",
+    cuisine: "bakery", type: "snack", tags: ["hidden-gem", "viral"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 75000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (13,276 ulasan). Hidden gem Bandung — kategori pastri.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 13276
+  },
+  {
+    id: "bellamie-boulangerie", name: "Bellamie Boulangerie", emoji: "🍳",
+    cuisine: "cafe", type: "food", tags: ["hidden-gem", "viral"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 75000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (8,245 ulasan). Hidden gem Bandung — kategori kafe.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 8245
+  },
+  {
+    id: "dakken-restaurant", name: "Dakken Restaurant", emoji: "🍕",
+    cuisine: "western", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 75000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (4,946 ulasan). Hidden gem Bandung — kategori masakan barat.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 4946
+  },
+  {
+    id: "dailah-sajian-nusantara-bandung", name: "Dailah Sajian Nusantara - Bandung", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 35000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (819 ulasan). Hidden gem Bandung — kategori indonesia.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.7, reviews: 819
+  },
+  {
+    id: "salt-saltbread", name: "Salt Saltbread", emoji: "🥐",
+    cuisine: "bakery", type: "snack", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "4.0★ (403 ulasan). Hidden gem Bandung — kategori toko roti.",
+    isTrending: false, trendingAreas: [], rating: 4.0, reviews: 403
+  },
+  {
+    id: "rumah-kopi-abdul", name: "Rumah Kopi Abdul", emoji: "☕",
+    cuisine: "cafe", type: "drink", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.8 (138 ulasan). Hidden gem Bandung — kategori kedai kopi.",
+    isTrending: false, trendingAreas: [], rating: 4.8, reviews: 138
+  },
+  {
+    id: "mangkok-manis", name: "Mangkok Manis", emoji: "✨",
+    cuisine: "fusion", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 75000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (3,846 ulasan). Hidden gem Bandung — kategori kedai hidangan penutup.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 3846
+  },
+  {
+    id: "dapur-aero", name: "Dapur Aero", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.8 (23 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.8, reviews: 23
+  },
+  {
+    id: "nhame-asia-afrika", name: "Nhame Asia Afrika", emoji: "✨",
+    cuisine: "fusion", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (91 ulasan). Hidden gem Bandung — kategori masakan asia.",
+    isTrending: false, trendingAreas: [], rating: 4.7, reviews: 91
+  },
+  {
+    id: "rasa-bakery-cafe", name: "Rasa Bakery & Cafe", emoji: "🥐",
+    cuisine: "bakery", type: "snack", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 75000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (4,848 ulasan). Hidden gem Bandung — kategori toko roti.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 4848
+  },
+  {
+    id: "gepuk-nyonya-yong", name: "Gepuk Nyonya Yong", emoji: "🍚",
+    cuisine: "sundanese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (660 ulasan). Hidden gem Bandung — kategori sunda.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 660
+  },
+  {
+    id: "kebon-ayam", name: "Kebon ayam", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "4.3★ (66 ulasan). Hidden gem Bandung — kategori nasi.",
+    isTrending: false, trendingAreas: [], rating: 4.3, reviews: 66
+  },
+  {
+    id: "mie-ayam-jemari", name: "Mie Ayam Jemari", emoji: "🍜",
+    cuisine: "chinese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "4.3★ (91 ulasan). Hidden gem Bandung — kategori mi.",
+    isTrending: false, trendingAreas: [], rating: 4.3, reviews: 91
+  },
+  {
+    id: "roadrunner-burger-by-ethereal", name: "Roadrunner Burger by EthereaL", emoji: "🍔",
+    cuisine: "western", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 88000, healthScore: 5, macros: null,
+    description: "⭐ 4.9 (160 ulasan). Hidden gem Bandung — kategori hamburger.",
+    isTrending: false, trendingAreas: [], rating: 4.9, reviews: 160
+  },
+  {
+    id: "soto-tangkar-gepuk-haji-jayadi", name: "Soto Tangkar & Gepuk Haji Jayadi", emoji: "🍲",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (468 ulasan). Hidden gem Bandung — kategori soto.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.7, reviews: 468
+  },
+  {
+    id: "burgerman", name: "BurgerMan", emoji: "🍔",
+    cuisine: "western", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 88000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (282 ulasan). Hidden gem Bandung — kategori hamburger.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.7, reviews: 282
+  },
+  {
+    id: "baso-bawean", name: "Baso Bawean", emoji: "🍲",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 18000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (203 ulasan). Hidden gem Bandung — kategori bakso.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 203
+  },
+  {
+    id: "lumiko38", name: "LumikO38", emoji: "☕",
+    cuisine: "cafe", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "4.3★ (289 ulasan). Hidden gem Bandung — kategori brunch.",
+    isTrending: false, trendingAreas: [], rating: 4.3, reviews: 289
+  },
+  {
+    id: "mimadre-brisket-sandwich", name: "MIMADRE Brisket & Sandwich", emoji: "🥪",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "4.4★ (69 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.4, reviews: 69
+  },
+  {
+    id: "mangloong", name: "Mangloong", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (275 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 275
+  },
+  {
+    id: "golden-chicken-rice", name: "Golden Chicken Rice", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.9 (16 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.9, reviews: 16
+  },
+  {
+    id: "sun-claypot-and-dimsum", name: "Sun Claypot and Dimsum", emoji: "🥟",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (480 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 480
+  },
+  {
+    id: "wongkie-kopitiam-malabar", name: "Wongkie Kopitiam - Malabar", emoji: "☕",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem", "fyp"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ Top-rated 4.9 (1,162 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.9, reviews: 1162
+  },
+  {
+    id: "mie-kocok-bpjs", name: "Mie Kocok BPJS", emoji: "🍜",
+    cuisine: "chinese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (414 ulasan). Hidden gem Bandung — kategori mi.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 414
+  },
+  {
+    id: "ayam-goreng-kurnia", name: "Ayam Goreng Kurnia", emoji: "🍗",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (468 ulasan). Hidden gem Bandung — kategori ayam.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 468
+  },
+  {
+    id: "yaowarat-thai-street-food", name: "Yaowarat Thai Street food", emoji: "🌶",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (34 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.7, reviews: 34
+  },
+  {
+    id: "nasi-bali-semeton-kalipah-apo", name: "Nasi Bali SEMETON - Kalipah Apo", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem", "fyp"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ Top-rated 4.9 (718 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: true, trendingAreas: ["cibadak"], rating: 4.9, reviews: 718
+  },
+  {
+    id: "kedai-wanfang", name: "Kedai Wanfang", emoji: "🍜",
+    cuisine: "chinese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (528 ulasan). Hidden gem Bandung — kategori china.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 528
+  },
+  {
+    id: "duwatiga", name: "Duwatiga", emoji: "☕",
+    cuisine: "cafe", type: "food", tags: ["hidden-gem", "fyp"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ Top-rated 4.8 (1,318 ulasan). Hidden gem Bandung — kategori kedai kopi.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.8, reviews: 1318
+  },
+  {
+    id: "rm-abah-harja-bandung", name: "RM ABAH HARJA BANDUNG", emoji: "🍚",
+    cuisine: "sundanese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 35000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (1,783 ulasan). Hidden gem Bandung — kategori sunda.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.7, reviews: 1783
+  },
+  {
+    id: "ayam-pedas-banyuwangi-hj-supiyah", name: "Ayam Pedas Banyuwangi Hj. Supiyah", emoji: "✨",
+    cuisine: "fusion", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 3,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (189 ulasan). Hidden gem Bandung — kategori masakan asia.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 189
+  },
+  {
+    id: "spill-bites-purnawarman", name: "Spill & Bites Purnawarman", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (267 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 267
+  },
+  {
+    id: "warung-sate-mang-zebul", name: "Warung Sate Mang Zebul", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (45 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.7, reviews: 45
+  },
+  {
+    id: "goodwheel-companion", name: "Goodwheel Companion", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem", "fyp"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 35000, healthScore: 5, macros: null,
+    description: "⭐ Top-rated 5.0 (4,166 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 5.0, reviews: 4166
+  },
+  {
+    id: "roemah-haji-daging", name: "Roemah Haji Daging", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem", "fyp"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ Top-rated 4.8 (507 ulasan). Hidden gem Bandung — kategori rumah makan.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.8, reviews: 507
+  },
+  {
+    id: "iga-siliwangi", name: "Iga Siliwangi", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 35000, healthScore: 5, macros: null,
+    description: "4.3★ (542 ulasan). Hidden gem Bandung — kategori indonesia.",
+    isTrending: false, trendingAreas: [], rating: 4.3, reviews: 542
+  },
+  {
+    id: "halaman-dapur-geeyaa", name: "Halaman Dapur Geeyaa", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.8 (55 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.8, reviews: 55
+  },
+  {
+    id: "mr-raffles-bistro-bar", name: "Mr. Raffles Bistro & Bar", emoji: "🍽",
+    cuisine: "cafe", type: "food", tags: ["hidden-gem", "fyp"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 35000, healthScore: 5, macros: null,
+    description: "⭐ Top-rated 4.8 (1,465 ulasan). Hidden gem Bandung — kategori bistro.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.8, reviews: 1465
+  },
+  {
+    id: "homu-kanpai", name: "Homu Kanpai", emoji: "🍣",
+    cuisine: "japanese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 35000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (113 ulasan). Hidden gem Bandung — kategori jepang.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 113
+  },
+  {
+    id: "sate-madas-asin-pedas", name: "Sate Madas Asin Pedas", emoji: "🍢",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 3,
+    priceTier: "low", estPrice: 18000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (443 ulasan). Hidden gem Bandung — kategori sate.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.7, reviews: 443
+  },
+  {
+    id: "warung-sate-bu-ngantuk", name: "Warung Sate Bu Ngantuk", emoji: "🍢",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 18000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (1,077 ulasan). Hidden gem Bandung — kategori sate.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 1077
+  },
+  {
+    id: "sate-madura-cak-nur-maskumambang", name: "SATE MADURA CAK NUR, MASKUMAMBANG", emoji: "🍢",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 18000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (237 ulasan). Hidden gem Bandung — kategori sate.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 237
+  },
+  {
+    id: "siomay-baso-tahu-bung-fahri", name: "siomay baso tahu BUNG fahri", emoji: "🍲",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 18000, healthScore: 5, macros: null,
+    description: "⭐ 4.9 (44 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.9, reviews: 44
+  },
+  {
+    id: "bbq-mountain-boys-burger", name: "BBQ Mountain Boys Burger", emoji: "🍔",
+    cuisine: "western", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 88000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (4,317 ulasan). Hidden gem Bandung — kategori hamburger.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 4317
+  },
+  {
+    id: "fransis-pizza", name: "Fransis Pizza", emoji: "🍕",
+    cuisine: "western", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 35000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (545 ulasan). Hidden gem Bandung — kategori pizza.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.7, reviews: 545
+  },
+  {
+    id: "chorus-coffee", name: "Chorus Coffee", emoji: "☕",
+    cuisine: "cafe", type: "drink", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (450 ulasan). Hidden gem Bandung — kategori kedai kopi.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.7, reviews: 450
+  },
+  {
+    id: "m-laga-resto", name: "Málaga Resto", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem", "fyp"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 35000, healthScore: 5, macros: null,
+    description: "⭐ Top-rated 4.9 (1,136 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.9, reviews: 1136
+  },
+  {
+    id: "altero-bistronomie", name: "Altero Bistronomie", emoji: "🍽",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem", "fyp"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "high", estPrice: 280000, healthScore: 5, macros: null,
+    description: "⭐ Top-rated 4.8 (1,098 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.8, reviews: 1098
+  },
+  {
+    id: "san-da-http-san-da-ran-coffee", name: "[San.Da](http://San.Da).Ran Coffee", emoji: "☕",
+    cuisine: "cafe", type: "drink", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (879 ulasan). Hidden gem Bandung — kategori kedai kopi.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.7, reviews: 879
+  },
+  {
+    id: "nasi-kuning-dan-uduk-pandu-ny-shelvy", name: "Nasi Kuning dan Uduk Pandu Ny. Shelvy", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (424 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 424
+  },
+  {
+    id: "warung-nasi-pecel-kediri-pak-tono", name: "Warung Nasi Pecel Kediri Pak Tono", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 18000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (207 ulasan). Hidden gem Bandung — kategori jawa timur.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 207
+  },
+  {
+    id: "nasi-kuning-roemah-naskoen", name: "Nasi Kuning Roemah Naskoen", emoji: "🍛",
+    cuisine: "western", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 18000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (51 ulasan). Hidden gem Bandung — kategori makanan siap saji.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 51
+  },
+  {
+    id: "waroeng-ethnic", name: "Waroeng Ethnic", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 88000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (2,292 ulasan). Hidden gem Bandung — kategori sesuai untuk keluarga.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 2292
+  },
+  {
+    id: "lamansua-coffee-eatery", name: "LAMANSUA Coffee & Eatery", emoji: "☕",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem", "fyp"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ Top-rated 4.8 (677 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.8, reviews: 677
+  },
+  {
+    id: "the-deli-bakes-cafe-pudak", name: "The Deli Bakes Cafe (Pudak)", emoji: "🍳",
+    cuisine: "cafe", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 35000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (1,990 ulasan). Hidden gem Bandung — kategori kafe.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 1990
+  },
+  {
+    id: "kedai-makan-tiga-paman", name: "Kedai Makan Tiga Paman", emoji: "🍜",
+    cuisine: "chinese", type: "food", tags: ["hidden-gem", "fyp"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 35000, healthScore: 5, macros: null,
+    description: "⭐ Top-rated 4.9 (2,535 ulasan). Hidden gem Bandung — kategori china.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.9, reviews: 2535
+  },
+  {
+    id: "bakmie-ayam-58-teuku-umar", name: "Bakmie Ayam 58 - Teuku Umar", emoji: "🍜",
+    cuisine: "chinese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (565 ulasan). Hidden gem Bandung — kategori mie china.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 565
+  },
+  {
+    id: "legenda-tiga-ayam", name: "Legenda Tiga Ayam", emoji: "🍗",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem", "fyp"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ Top-rated 4.8 (1,012 ulasan). Hidden gem Bandung — kategori ayam.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.8, reviews: 1012
+  },
+  {
+    id: "abon-gulung-siliwangi", name: "Abon Gulung Siliwangi", emoji: "🥐",
+    cuisine: "bakery", type: "snack", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 88000, healthScore: 5, macros: null,
+    description: "4.2★ (137 ulasan). Hidden gem Bandung — kategori toko roti.",
+    isTrending: false, trendingAreas: [], rating: 4.2, reviews: 137
+  },
+  {
+    id: "bungkushin-cihapit", name: "Bungkushin Cihapit", emoji: "🍣",
+    cuisine: "japanese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (100 ulasan). Hidden gem Bandung — kategori jepang.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 100
+  },
+  {
+    id: "warung-rujak-cingur-pecel-jombang-bu-suji", name: "Warung Rujak Cingur & Pecel Jombang Bu Suji", emoji: "🥗",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (470 ulasan). Hidden gem Bandung — kategori jawa timur.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.7, reviews: 470
+  },
+  {
+    id: "yurin-rumah-makan", name: "Yurin Rumah Makan", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 18000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (2,240 ulasan). Hidden gem Bandung — kategori prasmanan.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.7, reviews: 2240
+  },
+  {
+    id: "batagor-mas-godeg", name: "batagor mas godeg", emoji: "🥟",
+    cuisine: "sundanese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 18000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (47 ulasan). Hidden gem Bandung — kategori sunda.",
+    isTrending: false, trendingAreas: [], rating: 4.7, reviews: 47
+  },
+  {
+    id: "soto-ahri", name: "Soto AHRI", emoji: "🍲",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (490 ulasan). Hidden gem Bandung — kategori soto.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 490
+  },
+  {
+    id: "luca-pasta-steak", name: "Luca Pasta & Steak", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "4.4★ (692 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.4, reviews: 692
+  },
+  {
+    id: "kuah-dua-pulau", name: "Kuah Dua Pulau", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "4.3★ (131 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.3, reviews: 131
+  },
+  {
+    id: "mie-abud-mie-yamin-bakso-pangsit", name: "Mie Abud (Mie Yamin Bakso Pangsit)", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (166 ulasan). Hidden gem Bandung — kategori indonesia.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 166
+  },
+  {
+    id: "ponyo-resto-wedding-malabar-bandung", name: "Ponyo Resto & Wedding - Malabar Bandung", emoji: "🍚",
+    cuisine: "sundanese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (4,706 ulasan). Hidden gem Bandung — kategori sunda.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 4706
+  },
+  {
+    id: "lotek-dan-es-cendol-alkateri", name: "Lotek dan Es Cendol Alkateri", emoji: "🥗",
+    cuisine: "sundanese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 18000, healthScore: 8, macros: null,
+    description: "⭐ 4.5 (404 ulasan). Hidden gem Bandung — kategori salad.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 404
+  },
+  {
+    id: "baso-laswi", name: "Baso Laswi", emoji: "🍲",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (1,225 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 1225
+  },
+  {
+    id: "third-space-coffee-dimsum-noodle", name: "Third Space | Coffee Dimsum Noodle", emoji: "☕",
+    cuisine: "cafe", type: "drink", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (2,142 ulasan). Hidden gem Bandung — kategori kafe.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.7, reviews: 2142
+  },
+  {
+    id: "kopi-moyan", name: "Kopi Moyan", emoji: "☕",
+    cuisine: "cafe", type: "drink", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (1,449 ulasan). Hidden gem Bandung — kategori kedai kopi.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 1449
+  },
+  {
+    id: "khoe-pek-goan-bloemenstad-bandung", name: "Khoe Pek Goan Bloemenstad Bandung", emoji: "🥐",
+    cuisine: "bakery", type: "snack", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (2,587 ulasan). Hidden gem Bandung — kategori toko roti.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.7, reviews: 2587
+  },
+  {
+    id: "dough-deli", name: "Dough Deli", emoji: "🍩",
+    cuisine: "fusion", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 35000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (584 ulasan). Hidden gem Bandung — kategori donat.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.7, reviews: 584
+  },
+  {
+    id: "goda-nusantara", name: "Goda Nusantara", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.8 (326 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.8, reviews: 326
+  },
+  {
+    id: "my-kopi-o-trunojoyo", name: "My Kopi-O\! Trunojoyo", emoji: "☕",
+    cuisine: "cafe", type: "drink", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 88000, healthScore: 5, macros: null,
+    description: "4.4★ (3,023 ulasan). Hidden gem Bandung — kategori kedai kopi.",
+    isTrending: false, trendingAreas: [], rating: 4.4, reviews: 3023
+  },
+  {
+    id: "kartika-sari-dago", name: "Kartika Sari Dago", emoji: "🥐",
+    cuisine: "bakery", type: "snack", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 75000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (3,960 ulasan). Hidden gem Bandung — kategori toko roti.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 3960
+  },
+  {
+    id: "kedai-timbel-dago", name: "Kedai Timbel Dago", emoji: "🍚",
+    cuisine: "sundanese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (966 ulasan). Hidden gem Bandung — kategori sunda.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 966
+  },
+  {
+    id: "lontong-sayur-padang-uda-pero", name: "Lontong Sayur Padang Uda Pero", emoji: "🌶",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 3,
+    priceTier: "low", estPrice: 18000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (105 ulasan). Hidden gem Bandung — kategori padang.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 105
+  },
+  {
+    id: "noah-s-barn", name: "Noah's Barn", emoji: "🍳",
+    cuisine: "cafe", type: "food", tags: ["hidden-gem", "viral"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "high", estPrice: 150000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (6,100 ulasan). Hidden gem Bandung — kategori kafe.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 6100
+  },
+  {
+    id: "kapulaga-indonesian-bistro", name: "Kapulaga Indonesian Bistro", emoji: "🍽",
+    cuisine: "sundanese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "4.4★ (3,583 ulasan). Hidden gem Bandung — kategori sunda.",
+    isTrending: false, trendingAreas: [], rating: 4.4, reviews: 3583
+  },
+  {
+    id: "sop-buntut-tjap-tango", name: "SOP Buntut Tjap Tango", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (185 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 185
+  },
+  {
+    id: "tones-no-6", name: "TONES NO.6", emoji: "🍳",
+    cuisine: "cafe", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (494 ulasan). Hidden gem Bandung — kategori kafe.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 494
+  },
+  {
+    id: "rumamenak", name: "Rumamenak", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem", "fyp"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 35000, healthScore: 5, macros: null,
+    description: "⭐ Top-rated 4.9 (950 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.9, reviews: 950
+  },
+  {
+    id: "ten-to-ten-cafe-mangga", name: "Ten To Ten Cafe Mangga", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "4.4★ (276 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.4, reviews: 276
+  },
+  {
+    id: "la-basil-koffie-resto", name: "La Basil Koffie & Resto", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (860 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 860
+  },
+  {
+    id: "rm-agam-sakato", name: "Rm Agam Sakato", emoji: "🌶",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 3,
+    priceTier: "low", estPrice: 18000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (461 ulasan). Hidden gem Bandung — kategori padang.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 461
+  },
+  {
+    id: "mi-upami-by-badami", name: "Mi Upami by Badami", emoji: "🍜",
+    cuisine: "chinese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (190 ulasan). Hidden gem Bandung — kategori mi.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 190
+  },
+  {
+    id: "sop-kaki-kambing-sapi-999-mas-udin-jalan-jawa", name: "Sop kaki Kambing & Sapi 999 Mas Udin Jalan Jawa", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (316 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.7, reviews: 316
+  },
+  {
+    id: "sop-buntut-ma-emun-bandung", name: "Sop Buntut Ma Emun Bandung", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (91 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 91
+  },
+  {
+    id: "omamie-masakan-manado", name: "OmaMIE - Masakan Manado", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "4.3★ (364 ulasan). Hidden gem Bandung — kategori manado.",
+    isTrending: false, trendingAreas: [], rating: 4.3, reviews: 364
+  },
+  {
+    id: "rm-hj-ine-masakan-indonesia", name: "RM. Hj.Ine Masakan Indonesia", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (819 ulasan). Hidden gem Bandung — kategori rumah makan.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 819
+  },
+  {
+    id: "dapur-dahapati", name: "dapur Dahapati", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 88000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (1,445 ulasan). Hidden gem Bandung — kategori indonesia.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 1445
+  },
+  {
+    id: "soto-lamongan-7-kismuji", name: "Soto Lamongan 7 Kismuji", emoji: "🍲",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 18000, healthScore: 5, macros: null,
+    description: "⭐ 4.8 (51 ulasan). Hidden gem Bandung — kategori soto ayam.",
+    isTrending: false, trendingAreas: [], rating: 4.8, reviews: 51
+  },
+  {
+    id: "cwie-mie-87-bunderan-lombok", name: "Cwie Mie 87 (Bunderan Lombok)", emoji: "🍜",
+    cuisine: "chinese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 18000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (433 ulasan). Hidden gem Bandung — kategori mi.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 433
+  },
+  {
+    id: "toko-kopi-lajeng", name: "Toko Kopi Lajeng", emoji: "☕",
+    cuisine: "cafe", type: "drink", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (188 ulasan). Hidden gem Bandung — kategori kedai kopi.",
+    isTrending: false, trendingAreas: [], rating: 4.7, reviews: 188
+  },
+  {
+    id: "kozi-coffee-x-marawa", name: "Kozi Coffee X Marawa", emoji: "☕",
+    cuisine: "cafe", type: "drink", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (325 ulasan). Hidden gem Bandung — kategori kedai kopi.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 325
+  },
+  {
+    id: "batagor-h-darto", name: "Batagor H. Darto", emoji: "🥟",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 18000, healthScore: 5, macros: null,
+    description: "4.3★ (1,087 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.3, reviews: 1087
+  },
+  {
+    id: "warung-nasi-talago-biru", name: "Warung Nasi Talago Biru", emoji: "🌶",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 3,
+    priceTier: "low", estPrice: 18000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (78 ulasan). Hidden gem Bandung — kategori padang.",
+    isTrending: false, trendingAreas: [], rating: 4.7, reviews: 78
+  },
+  {
+    id: "fore-coffee-dipatiukur", name: "Fore Coffee - Dipatiukur", emoji: "☕",
+    cuisine: "cafe", type: "drink", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (1,509 ulasan). Hidden gem Bandung — kategori kedai kopi.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 1509
+  },
+  {
+    id: "aji-anom", name: "Aji Anom", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (1,121 ulasan). Hidden gem Bandung — kategori bali.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.7, reviews: 1121
+  },
+  {
+    id: "kafe-kebon", name: "Kafe Kebon", emoji: "🍕",
+    cuisine: "western", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (1,094 ulasan). Hidden gem Bandung — kategori pizza.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 1094
+  },
+  {
+    id: "shigeru-trans-studio-bandung", name: "Shigeru Trans Studio Bandung", emoji: "🍣",
+    cuisine: "japanese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 75000, healthScore: 5, macros: null,
+    description: "4.3★ (457 ulasan). Hidden gem Bandung — kategori jepang.",
+    isTrending: false, trendingAreas: [], rating: 4.3, reviews: 457
+  },
+  {
+    id: "mie-baso-rudal-anggrek", name: "Mie Baso Rudal Anggrek", emoji: "🍲",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (1,843 ulasan). Hidden gem Bandung — kategori bakso.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 1843
+  },
+  {
+    id: "prima-rasa-pasirkaliki", name: "Prima Rasa Pasirkaliki", emoji: "🥐",
+    cuisine: "bakery", type: "snack", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 75000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (4,047 ulasan). Hidden gem Bandung — kategori toko roti.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 4047
+  },
+  {
+    id: "nasi-uduk-ayam-goreng-cinta-97", name: "Nasi Uduk Ayam Goreng Cinta 97", emoji: "🍚",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "4.3★ (1,622 ulasan). Hidden gem Bandung — kategori nasi uduk.",
+    isTrending: false, trendingAreas: [], rating: 4.3, reviews: 1622
+  },
+  {
+    id: "mie-rajiman", name: "Mie Rajiman", emoji: "🍜",
+    cuisine: "chinese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.9 (60 ulasan). Hidden gem Bandung — kategori mi.",
+    isTrending: false, trendingAreas: [], rating: 4.9, reviews: 60
+  },
+  {
+    id: "bakmi-tasik-gardu-jati", name: "Bakmi Tasik Gardu Jati", emoji: "🍜",
+    cuisine: "chinese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "4.3★ (479 ulasan). Hidden gem Bandung — kategori mi.",
+    isTrending: false, trendingAreas: [], rating: 4.3, reviews: 479
+  },
+  {
+    id: "bakmie-maman-3-gardujati", name: "Bakmie Maman 3 Gardujati", emoji: "🍜",
+    cuisine: "chinese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "4.3★ (894 ulasan). Hidden gem Bandung — kategori mi.",
+    isTrending: false, trendingAreas: [], rating: 4.3, reviews: 894
+  },
+  {
+    id: "duti-roti-bakar-dan-bubur", name: "DUTI Roti Bakar dan Bubur", emoji: "🥐",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (1,053 ulasan). Hidden gem Bandung — kategori roti bakar.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 1053
+  },
+  {
+    id: "aa-bistik-selain-pesan-online", name: "AA Bistik (SELAIN PESAN ONLINE)", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "4.4★ (374 ulasan). Hidden gem Bandung — kategori pujasera.",
+    isTrending: false, trendingAreas: [], rating: 4.4, reviews: 374
+  },
+  {
+    id: "warung-nasi-ibu-imas", name: "Warung Nasi Ibu Imas", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "4.2★ (850 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.2, reviews: 850
+  },
+  {
+    id: "warung-nasi-ampera-kebon-kalapa", name: "Warung Nasi Ampera Kebon Kalapa", emoji: "🍚",
+    cuisine: "sundanese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "4.3★ (1,302 ulasan). Hidden gem Bandung — kategori sunda.",
+    isTrending: false, trendingAreas: [], rating: 4.3, reviews: 1302
+  },
+  {
+    id: "nasi-kuning-pungkur-216", name: "Nasi Kuning Pungkur 216", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 18000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (1,375 ulasan). Hidden gem Bandung — kategori indonesia.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 1375
+  },
+  {
+    id: "mie-127", name: "Mie 127", emoji: "🍜",
+    cuisine: "chinese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (516 ulasan). Hidden gem Bandung — kategori mi.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 516
+  },
+  {
+    id: "baso-balowo", name: "Baso Balowo", emoji: "🍲",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (711 ulasan). Hidden gem Bandung — kategori bakso.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 711
+  },
+  {
+    id: "bijikopling", name: "Bijikopling", emoji: "☕",
+    cuisine: "cafe", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (734 ulasan). Hidden gem Bandung — kategori kedai kopi.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.7, reviews: 734
+  },
+  {
+    id: "tizi", name: "Tizi", emoji: "🍕",
+    cuisine: "western", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "high", estPrice: 150000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (4,088 ulasan). Hidden gem Bandung — kategori belanda.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 4088
+  },
+  {
+    id: "bebek-ngarasan", name: "Bebek Ngarasan", emoji: "🦆",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "4.4★ (1,018 ulasan). Hidden gem Bandung — kategori restoran.",
+    isTrending: false, trendingAreas: [], rating: 4.4, reviews: 1018
+  },
+  {
+    id: "nasi-soto-ayam-cak-pardi", name: "Nasi Soto Ayam Cak Pardi", emoji: "🍲",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 18000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (171 ulasan). Hidden gem Bandung — kategori soto ayam.",
+    isTrending: false, trendingAreas: [], rating: 4.7, reviews: 171
+  },
+  {
+    id: "rumah-makan-padang-sari-banua", name: "Rumah Makan Padang Sari Banua", emoji: "🌶",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 3,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "4.4★ (534 ulasan). Hidden gem Bandung — kategori padang.",
+    isTrending: false, trendingAreas: [], rating: 4.4, reviews: 534
+  },
+  {
+    id: "baso-tri-lanang-s", name: "Baso Tri Lanang's", emoji: "🍲",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 18000, healthScore: 5, macros: null,
+    description: "⭐ 4.8 (63 ulasan). Hidden gem Bandung — kategori bakso.",
+    isTrending: false, trendingAreas: [], rating: 4.8, reviews: 63
+  },
+  {
+    id: "ayam-goreng-hawaii", name: "Ayam Goreng Hawaii", emoji: "🍗",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "4.4★ (536 ulasan). Hidden gem Bandung — kategori ayam goreng.",
+    isTrending: false, trendingAreas: [], rating: 4.4, reviews: 536
+  },
+  {
+    id: "chicken-run", name: "Chicken Run", emoji: "🍗",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 35000, healthScore: 5, macros: null,
+    description: "⭐ 5.0 (1 ulasan). Hidden gem Bandung — kategori ayam.",
+    isTrending: false, trendingAreas: [], rating: 5.0, reviews: 1
+  },
+  {
+    id: "ayam-bakar-taliwang-bersaudara", name: "Ayam Bakar Taliwang Bersaudara", emoji: "🍗",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 75000, healthScore: 5, macros: null,
+    description: "4.4★ (2,480 ulasan). Hidden gem Bandung — kategori ayam.",
+    isTrending: false, trendingAreas: [], rating: 4.4, reviews: 2480
+  },
+  {
+    id: "bebek-bakar-ayayo", name: "Bebek Bakar Ayayo", emoji: "🦆",
+    cuisine: "fusion", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (946 ulasan). Hidden gem Bandung — kategori masakan asia.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 946
+  },
+  {
+    id: "roasted-bar-tirtayasa", name: "Roasted Bar Tirtayasa", emoji: "🍗",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "4.4★ (186 ulasan). Hidden gem Bandung — kategori ayam.",
+    isTrending: false, trendingAreas: [], rating: 4.4, reviews: 186
+  },
 ];
