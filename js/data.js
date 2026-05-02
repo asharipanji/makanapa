@@ -33,7 +33,11 @@ const CUISINE_OPTIONS = [
   { id: "chinese",        label: "Chinese",        emoji: "🥡" },
   { id: "western",        label: "Western",        emoji: "🍕" },
   { id: "middle-eastern", label: "Timur Tengah",   emoji: "🥙" },
-  { id: "fusion",         label: "Fusion/Trendy",  emoji: "✨" }
+  { id: "fusion",         label: "Fusion/Trendy",  emoji: "✨" },
+  { id: "cafe",           label: "Kopi & Kafe",    emoji: "☕" },
+  { id: "bakery",         label: "Bakery",         emoji: "🥐" },
+  { id: "seafood",        label: "Seafood",        emoji: "🦐" },
+  { id: "steakhouse",     label: "Steakhouse",     emoji: "🥩" }
 ];
 
 const VIBE_OPTIONS = [
@@ -938,5 +942,299 @@ const FOODS = [
     healthScore: 5, macros: { kcal: 380, p: 14, c: 38, f: 18 },
     description: "Sandwich roti shokupan tebal + telur cincang creamy + mayo Jepang. Pillowy & rich. Konbini vibes.",
     isTrending: true, trendingAreas: ["riau", "dago"]
+  },
+
+  // ============================================================
+  // 💎 HIDDEN GEMS BANDUNG — diimport dari Google Maps lists
+  // (Ramz Kulineran Top Rated + Ramz Kulineran BDG)
+  // Tiap entry = real resto dengan rating + jumlah ulasan
+  // ============================================================
+  {
+    id: "lazy-jennie", name: "Lazy Jennie", emoji: "🍽",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem", "fyp"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ Top-rated 4.8 (652 ulasan). Hidden gem Bandung — restoran modern.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.8, reviews: 652
+  },
+  {
+    id: "natta-terrace", name: "Natta Terrace", emoji: "🍽",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 35000, healthScore: 5, macros: null,
+    description: "⭐ Top-rated 4.9 (219 ulasan). Hidden gem Bandung — restoran rooftop.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.9, reviews: 219
+  },
+  {
+    id: "kabin-binjai", name: "KABIN (Kedai Anak Binjai)", emoji: "🍽",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem", "fyp"],
+    vibes: ["comfort", "hearty"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ Top-rated 4.9 (6,521 ulasan). Family-friendly. Masakan Sumut, hidden gem Bandung.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.9, reviews: 6521
+  },
+  {
+    id: "rm-wangi-seruni", name: "Rumah Makan Wangi Seruni", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort", "hearty"], diet: ["halal"], allergies: [], spice: 2,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "4.2★ (1,351 ulasan). Masakan Indonesia rumahan klasik di Bandung.",
+    isTrending: false, trendingAreas: [], rating: 4.2, reviews: 1351
+  },
+  {
+    id: "sate-pak-ali-kebumen", name: "Sate Pak Ali Wong Kebumen", emoji: "🍢",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort", "hearty"], diet: ["halal"], allergies: ["nuts"], spice: 2,
+    priceTier: "medium", estPrice: 62000, healthScore: 6, macros: null,
+    description: "4.4★ (497 ulasan). Sate kambing/ayam khas Kebumen di Bandung.",
+    isTrending: false, trendingAreas: [], rating: 4.4, reviews: 497
+  },
+  {
+    id: "bakso-samrat-burangrang", name: "Bakso Solo Samrat Burangrang", emoji: "🍲",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: ["gluten"], spice: 1,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "3.6★ (882 ulasan). Bakso Solo legend di area Burangrang.",
+    isTrending: false, trendingAreas: ["bkr"], rating: 3.6, reviews: 882
+  },
+  {
+    id: "cafe-bali", name: "Cafe Bali", emoji: "🍳",
+    cuisine: "cafe", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "medium", estPrice: 50000, healthScore: 5, macros: null,
+    description: "4.4★ (5,163 ulasan). Cafe nuansa Bali, all-day breakfast & ngopi.",
+    isTrending: false, trendingAreas: [], rating: 4.4, reviews: 5163
+  },
+  {
+    id: "byasa-dianti", name: "BYASA.DIANTI", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem", "fyp"],
+    vibes: ["comfort"], diet: ["halal"], allergies: [], spice: 2,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (881 ulasan). Masakan Indonesia kontemporer dengan plating cantik.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.7, reviews: 881
+  },
+  {
+    id: "tji-laki-bolu-kue", name: "Tji Laki 9 — Toko Bolu & Kue", emoji: "🥐",
+    cuisine: "bakery", type: "snack", tags: ["hidden-gem"],
+    vibes: ["sweet", "comfort"], diet: ["halal", "vegetarian"], allergies: ["gluten", "eggs", "dairy"], spice: 0,
+    priceTier: "low", estPrice: 35000, healthScore: 4, macros: null,
+    description: "⭐ 4.5 (1,666 ulasan). Toko bolu & kue legendaris Bandung sejak puluhan tahun.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 1666
+  },
+  {
+    id: "aom-steakhouse", name: "AOM Steakhouse", emoji: "🥩",
+    cuisine: "steakhouse", type: "food", tags: ["hidden-gem"],
+    vibes: ["indulgent", "hearty"], diet: ["halal"], allergies: [], spice: 0,
+    priceTier: "high", estPrice: 280000, healthScore: 6, macros: null,
+    description: "⭐ 4.5 (936 ulasan). Steak premium Bandung — date night/special occasion.",
+    isTrending: false, trendingAreas: ["dago", "sukajadi"], rating: 4.5, reviews: 936
+  },
+  {
+    id: "gormeteria", name: "Gormeteria", emoji: "🍕",
+    cuisine: "western", type: "food", tags: ["hidden-gem", "fyp"],
+    vibes: ["indulgent"], diet: ["halal"], allergies: ["gluten", "dairy"], spice: 0,
+    priceTier: "high", estPrice: 120000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (8,001 ulasan). Western premium — favorit foodies Bandung.",
+    isTrending: true, trendingAreas: ["dago", "riau"], rating: 4.6, reviews: 8001
+  },
+  {
+    id: "rm-padang-malah-dicubo", name: "RM Padang Malah Dicubo", emoji: "🌶",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["spicy", "hearty"], diet: ["halal"], allergies: [], spice: 3,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (3,691 ulasan). Padang authentic dengan menu kompleks. Pedasnya nampar.",
+    isTrending: false, trendingAreas: [], rating: 4.5, reviews: 3691
+  },
+  {
+    id: "the-pleasant-service", name: "The Pleasant Service", emoji: "☕",
+    cuisine: "cafe", type: "drink", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: ["dairy"], spice: 0,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (140 ulasan). Specialty coffee shop dengan service yang ramah.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.7, reviews: 140
+  },
+  {
+    id: "moms-artisan-bakery", name: "Mom's Artisan Bakery", emoji: "🥐",
+    cuisine: "bakery", type: "snack", tags: ["hidden-gem"],
+    vibes: ["sweet", "comfort"], diet: ["halal", "vegetarian"], allergies: ["gluten", "dairy", "eggs"], spice: 0,
+    priceTier: "medium", estPrice: 62000, healthScore: 4, macros: null,
+    description: "⭐ 4.6 (1,495 ulasan). Artisan bakery — sourdough, croissant fresh dari oven.",
+    isTrending: false, trendingAreas: ["dago", "riau"], rating: 4.6, reviews: 1495
+  },
+  {
+    id: "dapur-indung", name: "Dapur Indung", emoji: "🍚",
+    cuisine: "sundanese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort", "hearty"], diet: ["halal"], allergies: [], spice: 2,
+    priceTier: "low", estPrice: 38000, healthScore: 7, macros: null,
+    description: "4.3★ (852 ulasan). Masakan Sunda autentik, ada nasi tutug oncom & ikan bakar.",
+    isTrending: false, trendingAreas: [], rating: 4.3, reviews: 852
+  },
+  {
+    id: "toko-you", name: "Toko You", emoji: "☕",
+    cuisine: "cafe", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: ["gluten", "dairy"], spice: 0,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "4.4★ (4,151 ulasan). Cafe klasik Bandung sejak lama — menu Indonesian + western.",
+    isTrending: false, trendingAreas: [], rating: 4.4, reviews: 4151
+  },
+  {
+    id: "parit-9-seafood", name: "Parit 9 Seafood", emoji: "🦐",
+    cuisine: "seafood", type: "food", tags: ["hidden-gem"],
+    vibes: ["hearty"], diet: ["halal", "pescatarian"], allergies: ["seafood"], spice: 2,
+    priceTier: "medium", estPrice: 50000, healthScore: 7, macros: null,
+    description: "4.3★ (7,340 ulasan). Seafood paling rame — udang, kerang, kepiting saus padang.",
+    isTrending: false, trendingAreas: [], rating: 4.3, reviews: 7340
+  },
+  {
+    id: "batagor-cuanki-serayu", name: "Batagor & Baso Cuankie Serayu", emoji: "🥟",
+    cuisine: "sundanese", type: "food", tags: ["hidden-gem", "fyp"],
+    vibes: ["comfort"], diet: ["halal"], allergies: ["nuts", "gluten"], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 6, macros: null,
+    description: "⭐ 4.5 (14,541 ulasan). Batagor & cuanki legend Bandung — selalu rame.",
+    isTrending: true, trendingAreas: ["cibadak"], rating: 4.5, reviews: 14541
+  },
+  {
+    id: "mie-baso-raos-pardi", name: "Mie Baso Raos Mas Pardi", emoji: "🍲",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: ["gluten"], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.6 (784 ulasan). Mie baso urat dengan kuah kaldu sapi pekat.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 784
+  },
+  {
+    id: "kilogram-gatsu", name: "Kilogram Space Gatot Subroto", emoji: "☕",
+    cuisine: "cafe", type: "drink", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: ["dairy"], spice: 0,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "4.0★ (221 ulasan). Cafe co-working area Gatsu — cocok buat kerja sambil ngopi.",
+    isTrending: false, trendingAreas: [], rating: 4.0, reviews: 221
+  },
+  {
+    id: "blow-listening-coffee", name: "B.LOW Listening Coffee", emoji: "☕",
+    cuisine: "cafe", type: "drink", tags: ["hidden-gem", "fyp"],
+    vibes: ["comfort"], diet: ["halal"], allergies: ["dairy"], spice: 0,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "4.4★ (84 ulasan). Listening bar — kopi specialty + vinyl music vibes.",
+    isTrending: false, trendingAreas: [], rating: 4.4, reviews: 84
+  },
+  {
+    id: "chime-in-coffee", name: "Chime In Coffee", emoji: "☕",
+    cuisine: "cafe", type: "drink", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: ["dairy"], spice: 0,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ Top-rated 4.9 (57 ulasan). Specialty coffee + cozy vibe.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.9, reviews: 57
+  },
+  {
+    id: "warung-bakmi-dago", name: "Warung Bakmi Dago", emoji: "🍜",
+    cuisine: "chinese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: ["gluten", "soy"], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.7 (152 ulasan). Bakmi otentik di area Dago — kuah dan bumbunya juara.",
+    isTrending: true, trendingAreas: ["dago"], rating: 4.7, reviews: 152
+  },
+  {
+    id: "sate-maranggi-naripan-bdg", name: "Sate Maranggi Naripan", emoji: "🍢",
+    cuisine: "sundanese", type: "food", tags: ["hidden-gem", "fyp"],
+    vibes: ["hearty"], diet: ["halal"], allergies: [], spice: 2,
+    priceTier: "medium", estPrice: 62000, healthScore: 6, macros: null,
+    description: "⭐ Top-rated 4.8 (150 ulasan). Sate maranggi sapi authentic Sunda.",
+    isTrending: true, trendingAreas: ["cibadak"], rating: 4.8, reviews: 150
+  },
+  {
+    id: "jiku-wagyu-yakiniku", name: "Jiku Wagyu Yakiniku", emoji: "🥩",
+    cuisine: "japanese", type: "food", tags: ["hidden-gem", "fyp"],
+    vibes: ["indulgent", "hearty"], diet: ["halal"], allergies: ["soy"], spice: 1,
+    priceTier: "high", estPrice: 180000, healthScore: 6, macros: null,
+    description: "⭐ Top-rated 4.9 (1,195 ulasan). Wagyu yakiniku — premium Jepang grilled.",
+    isTrending: true, trendingAreas: ["pasteur", "sukajadi"], rating: 4.9, reviews: 1195
+  },
+  {
+    id: "modular-coffee-space", name: "Modular Coffee & Space", emoji: "☕",
+    cuisine: "cafe", type: "drink", tags: ["hidden-gem"],
+    vibes: ["comfort", "light"], diet: ["halal"], allergies: ["dairy"], spice: 0,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ Top-rated 5.0 (8 ulasan). Coffee & co-working space dengan ruang terbuka.",
+    isTrending: false, trendingAreas: [], rating: 5.0, reviews: 8
+  },
+  {
+    id: "soto-jopankar", name: "Soto Jopankar", emoji: "🍲",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort", "healthy"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 35000, healthScore: 7, macros: null,
+    description: "⭐ Top-rated 4.9 (35 ulasan). Soto kuah bening segar — comfort food.",
+    isTrending: false, trendingAreas: [], rating: 4.9, reviews: 35
+  },
+  {
+    id: "gekato-pizza-laswi", name: "Gekato Pizza Laswi", emoji: "🍕",
+    cuisine: "western", type: "food", tags: ["hidden-gem", "fyp"],
+    vibes: ["indulgent"], diet: ["halal", "vegetarian"], allergies: ["gluten", "dairy"], spice: 0,
+    priceTier: "low", estPrice: 35000, healthScore: 5, macros: null,
+    description: "⭐ Top-rated 4.9 (114 ulasan). Pizza thin-crust di Laswi — viral di IG.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.9, reviews: 114
+  },
+  {
+    id: "bubur-ayam-kang-wahyu", name: "Bubur Ayam Kang Wahyu", emoji: "🍳",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort", "light"], diet: ["halal"], allergies: ["eggs"], spice: 1,
+    priceTier: "low", estPrice: 18000, healthScore: 6, macros: null,
+    description: "⭐ 4.6 (60 ulasan). Bubur ayam sederhana — sarapan klasik anak Bandung.",
+    isTrending: false, trendingAreas: [], rating: 4.6, reviews: 60
+  },
+  {
+    id: "raffels-sandwich-pvj", name: "Raffel's Sandwich PVJ", emoji: "🥪",
+    cuisine: "western", type: "food", tags: ["hidden-gem"],
+    vibes: ["indulgent", "comfort"], diet: ["halal"], allergies: ["gluten", "dairy"], spice: 0,
+    priceTier: "medium", estPrice: 62000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (116 ulasan). Sandwich generous di mall PVJ — quick bite favorite.",
+    isTrending: false, trendingAreas: ["sukajadi"], rating: 4.5, reviews: 116
+  },
+  {
+    id: "kisah-manis-huis", name: "Kisah Manis Huis", emoji: "🍰",
+    cuisine: "fusion", type: "dessert", tags: ["hidden-gem"],
+    vibes: ["sweet", "comfort"], diet: ["halal", "vegetarian"], allergies: ["gluten", "dairy", "eggs"], spice: 0,
+    priceTier: "low", estPrice: 35000, healthScore: 3, macros: null,
+    description: "⭐ 4.7 (706 ulasan). Dessert house — cake, pastry, tea time vibes.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.7, reviews: 706
+  },
+  {
+    id: "nasi-sop-halimun", name: "Nasi Sop Halimun", emoji: "🍛",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort", "hearty"], diet: ["halal"], allergies: [], spice: 1,
+    priceTier: "low", estPrice: 18000, healthScore: 7, macros: null,
+    description: "⭐ 4.6 (98 ulasan). Nasi sop daging legend di Jl. Halimun.",
+    isTrending: false, trendingAreas: ["cibadak"], rating: 4.6, reviews: 98
+  },
+  {
+    id: "batagor-haji-yunus", name: "Batagor Haji Yunus", emoji: "🥟",
+    cuisine: "sundanese", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort"], diet: ["halal"], allergies: ["nuts", "gluten"], spice: 2,
+    priceTier: "low", estPrice: 38000, healthScore: 5, macros: null,
+    description: "⭐ 4.5 (4,042 ulasan). Batagor legend Bandung — bumbu kacangnya ikonik.",
+    isTrending: false, trendingAreas: ["cibadak"], rating: 4.5, reviews: 4042
+  },
+  {
+    id: "nasi-pecel-mbak-naning", name: "Nasi Pecel Madiun Mbak Naning", emoji: "🥗",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort", "healthy"], diet: ["halal", "vegetarian"], allergies: ["nuts"], spice: 2,
+    priceTier: "low", estPrice: 18000, healthScore: 8, macros: null,
+    description: "⭐ Top-rated 4.8 (72 ulasan). Pecel Madiun authentic — sayur + bumbu kacang.",
+    isTrending: true, trendingAreas: ["lainnya"], rating: 4.8, reviews: 72
+  },
+  {
+    id: "lotek-rujak-mustikasari", name: "Lotek & Rujak Mustikasari", emoji: "🥗",
+    cuisine: "sundanese", type: "food", tags: ["hidden-gem"],
+    vibes: ["healthy", "spicy"], diet: ["halal", "vegetarian"], allergies: ["nuts"], spice: 3,
+    priceTier: "low", estPrice: 18000, healthScore: 8, macros: null,
+    description: "4.4★ (116 ulasan). Lotek + rujak Sunda autentik — fresh & pedas.",
+    isTrending: false, trendingAreas: [], rating: 4.4, reviews: 116
+  },
+  {
+    id: "bakso-kd-durian-cendol", name: "Bakso KD Durian & Cendol Bar Bar", emoji: "🍲",
+    cuisine: "indonesian", type: "food", tags: ["hidden-gem"],
+    vibes: ["comfort", "indulgent"], diet: ["halal"], allergies: ["gluten", "dairy"], spice: 1,
+    priceTier: "low", estPrice: 38000, healthScore: 4, macros: null,
+    description: "4.4★ (318 ulasan). Bakso bar-bar dengan menu durian + cendol — unik!",
+    isTrending: false, trendingAreas: [], rating: 4.4, reviews: 318
   }
 ];

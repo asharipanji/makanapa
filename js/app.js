@@ -1331,6 +1331,9 @@ Mohon untuk follow up. Terima kasih!`;
             <span class="em ${isTenant ? 'mega' : ''}">${food.emoji}</span>
             <h2>${food.name}</h2>
             ${isTenant && businessName ? `<div class="tenant-business">@ ${businessName}</div>` : ""}
+            ${typeof food.rating === "number" ? `
+              <div class="rating-badge">⭐ ${food.rating.toFixed(1)}${food.reviews ? ` <span class="rev">(${food.reviews.toLocaleString("id-ID")} ulasan)</span>` : ""}</div>
+            ` : ""}
             <div class="price">${Recommender.rupiah(food.estPrice)} • estimasi</div>
             <span class="cuisine-pill">${cuisineLabel}${isTenant ? ' • SPONSORED' : ''}</span>
           </div>

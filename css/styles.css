@@ -971,6 +971,22 @@ input { font: inherit; }
 .result-hero .price {
   font-size: 14px; opacity: .94; margin-top: 4px;
 }
+.result-hero .rating-badge {
+  display: inline-block;
+  margin-top: 6px;
+  background: rgba(255,255,255,.22);
+  padding: 4px 12px;
+  border-radius: var(--r-pill);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #FAF9F5;
+}
+.result-hero .rating-badge .rev {
+  font-weight: 500;
+  opacity: 0.88;
+  margin-left: 4px;
+}
 .result-hero .cuisine-pill {
   display: inline-block;
   margin-top: 8px;
